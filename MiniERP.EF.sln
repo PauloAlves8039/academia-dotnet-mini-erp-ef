@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MiniERP - WF", "MiniERP - WF", "{89E990B4-AAD0-4FDC-AAED-1A9CC376EAF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniERP.EF.App", "src\MiniERP.EF.App\MiniERP.EF.App.csproj", "{ABFF1979-B628-46BF-8400-4603BF31D7E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABFF1979-B628-46BF-8400-4603BF31D7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABFF1979-B628-46BF-8400-4603BF31D7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABFF1979-B628-46BF-8400-4603BF31D7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABFF1979-B628-46BF-8400-4603BF31D7E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ABFF1979-B628-46BF-8400-4603BF31D7E9} = {89E990B4-AAD0-4FDC-AAED-1A9CC376EAF8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {261DFBCE-3724-42BC-963C-4E2AA8EC416E}
+	EndGlobalSection
+EndGlobal
