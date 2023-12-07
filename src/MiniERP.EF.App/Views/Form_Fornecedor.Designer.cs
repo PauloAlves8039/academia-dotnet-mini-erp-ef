@@ -34,7 +34,7 @@
             ToolStrip_Fornecedor = new ToolStrip();
             Btn_Sair_Fornecedor = new ToolStripButton();
             groupBox_Formulario_Fornecedor = new GroupBox();
-            maskedTextBox1 = new MaskedTextBox();
+            mktb_CNPJ_Fornecedor = new MaskedTextBox();
             ToolStrip_Formulario_Fornecedor = new ToolStrip();
             Btn_Salvar_Fornecedor = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
@@ -44,7 +44,7 @@
             txb_Endereco_Fornecedor = new TextBox();
             txb_Email_Fornecedor = new TextBox();
             mktb_Telefone_Fornecedor = new MaskedTextBox();
-            txb_Nome_Cliente = new TextBox();
+            txb_RazaoSocial_Fornecedor = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -96,7 +96,7 @@
             ToolStrip_Fornecedor.Items.AddRange(new ToolStripItem[] { Btn_Sair_Fornecedor });
             ToolStrip_Fornecedor.Location = new Point(0, 572);
             ToolStrip_Fornecedor.Name = "ToolStrip_Fornecedor";
-            ToolStrip_Fornecedor.Size = new Size(884, 39);
+            ToolStrip_Fornecedor.Size = new Size(984, 39);
             ToolStrip_Fornecedor.TabIndex = 9;
             ToolStrip_Fornecedor.Text = "toolStrip1";
             // 
@@ -114,31 +114,31 @@
             // 
             // groupBox_Formulario_Fornecedor
             // 
-            groupBox_Formulario_Fornecedor.Controls.Add(maskedTextBox1);
+            groupBox_Formulario_Fornecedor.Controls.Add(mktb_CNPJ_Fornecedor);
             groupBox_Formulario_Fornecedor.Controls.Add(ToolStrip_Formulario_Fornecedor);
             groupBox_Formulario_Fornecedor.Controls.Add(txb_Endereco_Fornecedor);
             groupBox_Formulario_Fornecedor.Controls.Add(txb_Email_Fornecedor);
             groupBox_Formulario_Fornecedor.Controls.Add(mktb_Telefone_Fornecedor);
-            groupBox_Formulario_Fornecedor.Controls.Add(txb_Nome_Cliente);
+            groupBox_Formulario_Fornecedor.Controls.Add(txb_RazaoSocial_Fornecedor);
             groupBox_Formulario_Fornecedor.Controls.Add(label6);
             groupBox_Formulario_Fornecedor.Controls.Add(label5);
             groupBox_Formulario_Fornecedor.Controls.Add(label4);
             groupBox_Formulario_Fornecedor.Controls.Add(label3);
             groupBox_Formulario_Fornecedor.Controls.Add(label2);
-            groupBox_Formulario_Fornecedor.Location = new Point(357, 248);
+            groupBox_Formulario_Fornecedor.Location = new Point(393, 248);
             groupBox_Formulario_Fornecedor.Name = "groupBox_Formulario_Fornecedor";
-            groupBox_Formulario_Fornecedor.Size = new Size(500, 300);
+            groupBox_Formulario_Fornecedor.Size = new Size(569, 300);
             groupBox_Formulario_Fornecedor.TabIndex = 8;
             groupBox_Formulario_Fornecedor.TabStop = false;
             groupBox_Formulario_Fornecedor.Text = "Formulário Fornecedor";
             // 
-            // maskedTextBox1
+            // mktb_CNPJ_Fornecedor
             // 
-            maskedTextBox1.Location = new Point(114, 80);
-            maskedTextBox1.Mask = "##.###.###/####-##";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(120, 23);
-            maskedTextBox1.TabIndex = 11;
+            mktb_CNPJ_Fornecedor.Location = new Point(114, 80);
+            mktb_CNPJ_Fornecedor.Mask = "##############";
+            mktb_CNPJ_Fornecedor.Name = "mktb_CNPJ_Fornecedor";
+            mktb_CNPJ_Fornecedor.Size = new Size(120, 23);
+            mktb_CNPJ_Fornecedor.TabIndex = 11;
             // 
             // ToolStrip_Formulario_Fornecedor
             // 
@@ -148,7 +148,7 @@
             ToolStrip_Formulario_Fornecedor.Items.AddRange(new ToolStripItem[] { Btn_Salvar_Fornecedor, toolStripSeparator2, Btn_Limpar_Campos_Fornecedor, toolStripSeparator3, Btn_Excluir_Fornecedor });
             ToolStrip_Formulario_Fornecedor.Location = new Point(3, 258);
             ToolStrip_Formulario_Fornecedor.Name = "ToolStrip_Formulario_Fornecedor";
-            ToolStrip_Formulario_Fornecedor.Size = new Size(494, 39);
+            ToolStrip_Formulario_Fornecedor.Size = new Size(563, 39);
             ToolStrip_Formulario_Fornecedor.TabIndex = 10;
             ToolStrip_Formulario_Fornecedor.Text = "toolStrip1";
             // 
@@ -161,6 +161,7 @@
             Btn_Salvar_Fornecedor.Name = "Btn_Salvar_Fornecedor";
             Btn_Salvar_Fornecedor.Size = new Size(36, 36);
             Btn_Salvar_Fornecedor.Text = "Salvar Fornecedor";
+            Btn_Salvar_Fornecedor.Click += Btn_Salvar_Fornecedor_Click;
             // 
             // toolStripSeparator2
             // 
@@ -176,6 +177,7 @@
             Btn_Limpar_Campos_Fornecedor.Name = "Btn_Limpar_Campos_Fornecedor";
             Btn_Limpar_Campos_Fornecedor.Size = new Size(36, 36);
             Btn_Limpar_Campos_Fornecedor.Text = "Limpar Campos";
+            Btn_Limpar_Campos_Fornecedor.Click += Btn_Limpar_Campos_Fornecedor_Click;
             // 
             // toolStripSeparator3
             // 
@@ -191,6 +193,7 @@
             Btn_Excluir_Fornecedor.Name = "Btn_Excluir_Fornecedor";
             Btn_Excluir_Fornecedor.Size = new Size(36, 36);
             Btn_Excluir_Fornecedor.Text = "Excluir Fornecedor";
+            Btn_Excluir_Fornecedor.Click += Btn_Excluir_Fornecedor_Click;
             // 
             // txb_Endereco_Fornecedor
             // 
@@ -214,12 +217,12 @@
             mktb_Telefone_Fornecedor.Size = new Size(100, 23);
             mktb_Telefone_Fornecedor.TabIndex = 7;
             // 
-            // txb_Nome_Cliente
+            // txb_RazaoSocial_Fornecedor
             // 
-            txb_Nome_Cliente.Location = new Point(113, 34);
-            txb_Nome_Cliente.Name = "txb_Nome_Cliente";
-            txb_Nome_Cliente.Size = new Size(200, 23);
-            txb_Nome_Cliente.TabIndex = 5;
+            txb_RazaoSocial_Fornecedor.Location = new Point(113, 34);
+            txb_RazaoSocial_Fornecedor.Name = "txb_RazaoSocial_Fornecedor";
+            txb_RazaoSocial_Fornecedor.Size = new Size(200, 23);
+            txb_RazaoSocial_Fornecedor.TabIndex = 5;
             // 
             // label6
             // 
@@ -279,16 +282,16 @@
             groupBox_Pesquisar_Fornecedor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox_Pesquisar_Fornecedor.Location = new Point(24, 248);
             groupBox_Pesquisar_Fornecedor.Name = "groupBox_Pesquisar_Fornecedor";
-            groupBox_Pesquisar_Fornecedor.Size = new Size(300, 120);
+            groupBox_Pesquisar_Fornecedor.Size = new Size(330, 120);
             groupBox_Pesquisar_Fornecedor.TabIndex = 7;
             groupBox_Pesquisar_Fornecedor.TabStop = false;
             groupBox_Pesquisar_Fornecedor.Text = "Pesquisar Fornecedor";
             // 
             // txb_Pesquisar_Fornecedor
             // 
-            txb_Pesquisar_Fornecedor.Location = new Point(147, 29);
+            txb_Pesquisar_Fornecedor.Location = new Point(146, 29);
             txb_Pesquisar_Fornecedor.Name = "txb_Pesquisar_Fornecedor";
-            txb_Pesquisar_Fornecedor.Size = new Size(150, 23);
+            txb_Pesquisar_Fornecedor.Size = new Size(180, 23);
             txb_Pesquisar_Fornecedor.TabIndex = 2;
             // 
             // label1
@@ -309,7 +312,7 @@
             ToolStrip_Pesquisar_Fornecedor.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Fornecedor, toolStripSeparator1, Btn_Limpar_Campo_Fornecedor });
             ToolStrip_Pesquisar_Fornecedor.Location = new Point(3, 78);
             ToolStrip_Pesquisar_Fornecedor.Name = "ToolStrip_Pesquisar_Fornecedor";
-            ToolStrip_Pesquisar_Fornecedor.Size = new Size(294, 39);
+            ToolStrip_Pesquisar_Fornecedor.Size = new Size(324, 39);
             ToolStrip_Pesquisar_Fornecedor.TabIndex = 0;
             ToolStrip_Pesquisar_Fornecedor.Text = "toolStrip1";
             // 
@@ -322,6 +325,7 @@
             Btn_Pesquisar_Fornecedor.Name = "Btn_Pesquisar_Fornecedor";
             Btn_Pesquisar_Fornecedor.Size = new Size(36, 36);
             Btn_Pesquisar_Fornecedor.Text = "Pesquisar Fornecedor";
+            Btn_Pesquisar_Fornecedor.Click += Btn_Pesquisar_Fornecedor_Click;
             // 
             // toolStripSeparator1
             // 
@@ -337,25 +341,27 @@
             Btn_Limpar_Campo_Fornecedor.Name = "Btn_Limpar_Campo_Fornecedor";
             Btn_Limpar_Campo_Fornecedor.Size = new Size(36, 36);
             Btn_Limpar_Campo_Fornecedor.Text = "Limpar Campo";
+            Btn_Limpar_Campo_Fornecedor.Click += Btn_Limpar_Campo_Fornecedor_Click;
             // 
             // dataGridView_Fornecedor
             // 
             dataGridView_Fornecedor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView_Fornecedor.BackgroundColor = Color.White;
             dataGridView_Fornecedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_Fornecedor.Location = new Point(27, 55);
+            dataGridView_Fornecedor.Location = new Point(12, 51);
             dataGridView_Fornecedor.Name = "dataGridView_Fornecedor";
             dataGridView_Fornecedor.RowTemplate.Height = 25;
             dataGridView_Fornecedor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView_Fornecedor.Size = new Size(830, 160);
+            dataGridView_Fornecedor.Size = new Size(950, 160);
             dataGridView_Fornecedor.TabIndex = 6;
+            dataGridView_Fornecedor.CellDoubleClick += dataGridView_Fornecedor_CellDoubleClick;
             // 
             // Form_Fornecedor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(884, 611);
+            ClientSize = new Size(984, 611);
             Controls.Add(pictureBox1);
             Controls.Add(label7);
             Controls.Add(ToolStrip_Fornecedor);
@@ -400,7 +406,7 @@
         private TextBox txb_Endereco_Fornecedor;
         private TextBox txb_Email_Fornecedor;
         private MaskedTextBox mktb_Telefone_Fornecedor;
-        private TextBox txb_Nome_Cliente;
+        private TextBox txb_RazaoSocial_Fornecedor;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -414,6 +420,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripButton Btn_Limpar_Campo_Fornecedor;
         private DataGridView dataGridView_Fornecedor;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox mktb_CNPJ_Fornecedor;
     }
 }
