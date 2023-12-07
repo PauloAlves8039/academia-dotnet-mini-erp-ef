@@ -78,6 +78,7 @@
             dataGridView_Cliente.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_Cliente.Size = new Size(826, 150);
             dataGridView_Cliente.TabIndex = 0;
+            dataGridView_Cliente.CellDoubleClick += dataGridView_Cliente_CellDoubleClick;
             // 
             // groupBox_Pesquisar_Cliente
             // 
@@ -130,6 +131,7 @@
             Btn_Pesquisar_Cliente.Name = "Btn_Pesquisar_Cliente";
             Btn_Pesquisar_Cliente.Size = new Size(36, 36);
             Btn_Pesquisar_Cliente.Text = "Pesquisar Cliente";
+            Btn_Pesquisar_Cliente.Click += Btn_Pesquisar_Cliente_Click;
             // 
             // toolStripSeparator1
             // 
@@ -145,6 +147,7 @@
             Btn_Limpar_Campo_Cliente.Name = "Btn_Limpar_Campo_Cliente";
             Btn_Limpar_Campo_Cliente.Size = new Size(36, 36);
             Btn_Limpar_Campo_Cliente.Text = "Limpar Campo";
+            Btn_Limpar_Campo_Cliente.Click += Btn_Limpar_Campo_Cliente_Click;
             // 
             // groupBox_Formulario_Cliente
             // 
@@ -187,6 +190,7 @@
             Btn_Salvar_Cliente.Name = "Btn_Salvar_Cliente";
             Btn_Salvar_Cliente.Size = new Size(36, 36);
             Btn_Salvar_Cliente.Text = "Salvar Cliente";
+            Btn_Salvar_Cliente.Click += Btn_Salvar_Cliente_Click;
             // 
             // toolStripSeparator2
             // 
@@ -202,6 +206,7 @@
             Btn_Limpar_Campos_Cliente.Name = "Btn_Limpar_Campos_Cliente";
             Btn_Limpar_Campos_Cliente.Size = new Size(36, 36);
             Btn_Limpar_Campos_Cliente.Text = "Limpar Campos";
+            Btn_Limpar_Campos_Cliente.Click += Btn_Limpar_Campos_Cliente_Click;
             // 
             // toolStripSeparator3
             // 
@@ -217,6 +222,7 @@
             Btn_Excluir_Cliente.Name = "Btn_Excluir_Cliente";
             Btn_Excluir_Cliente.Size = new Size(36, 36);
             Btn_Excluir_Cliente.Text = "Excluir Cliente";
+            Btn_Excluir_Cliente.Click += Btn_Excluir_Cliente_Click;
             // 
             // txb_Endereco_Cliente
             // 
@@ -243,7 +249,7 @@
             // mktb_CPF_Cliente
             // 
             mktb_CPF_Cliente.Location = new Point(113, 78);
-            mktb_CPF_Cliente.Mask = "###/###/###-##";
+            mktb_CPF_Cliente.Mask = "###########";
             mktb_CPF_Cliente.Name = "mktb_CPF_Cliente";
             mktb_CPF_Cliente.Size = new Size(100, 23);
             mktb_CPF_Cliente.TabIndex = 6;
