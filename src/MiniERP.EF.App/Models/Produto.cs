@@ -13,6 +13,7 @@ namespace MiniERP.EF.App.Models
         public string Nome { get; set; }
         public decimal Preco { get; set; }
         public int Estoque { get; set; }
+        public string Descricao { get; set; }
         public int? FornecedorId { get; set; }
 
         [Browsable(false)]

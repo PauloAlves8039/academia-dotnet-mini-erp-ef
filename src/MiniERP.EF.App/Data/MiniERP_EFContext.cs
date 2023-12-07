@@ -144,6 +144,8 @@ namespace MiniERP.EF.App.Data
 
                 entity.Property(e => e.Preco).HasColumnType("decimal(18, 2)");
 
+                entity.Property(e => e.Descricao).HasMaxLength(250);
+
                 entity.HasOne(d => d.Fornecedor)
                     .WithMany(p => p.Produtos)
                     .HasForeignKey(d => d.FornecedorId)
