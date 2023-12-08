@@ -125,9 +125,9 @@
             groupBox_Formulario_Fornecedor.Controls.Add(label4);
             groupBox_Formulario_Fornecedor.Controls.Add(label3);
             groupBox_Formulario_Fornecedor.Controls.Add(label2);
-            groupBox_Formulario_Fornecedor.Location = new Point(393, 248);
+            groupBox_Formulario_Fornecedor.Location = new Point(462, 248);
             groupBox_Formulario_Fornecedor.Name = "groupBox_Formulario_Fornecedor";
-            groupBox_Formulario_Fornecedor.Size = new Size(569, 300);
+            groupBox_Formulario_Fornecedor.Size = new Size(500, 300);
             groupBox_Formulario_Fornecedor.TabIndex = 8;
             groupBox_Formulario_Fornecedor.TabStop = false;
             groupBox_Formulario_Fornecedor.Text = "Formulário Fornecedor";
@@ -148,7 +148,7 @@
             ToolStrip_Formulario_Fornecedor.Items.AddRange(new ToolStripItem[] { Btn_Salvar_Fornecedor, toolStripSeparator2, Btn_Limpar_Campos_Fornecedor, toolStripSeparator3, Btn_Excluir_Fornecedor });
             ToolStrip_Formulario_Fornecedor.Location = new Point(3, 258);
             ToolStrip_Formulario_Fornecedor.Name = "ToolStrip_Formulario_Fornecedor";
-            ToolStrip_Formulario_Fornecedor.Size = new Size(563, 39);
+            ToolStrip_Formulario_Fornecedor.Size = new Size(494, 39);
             ToolStrip_Formulario_Fornecedor.TabIndex = 10;
             ToolStrip_Formulario_Fornecedor.Text = "toolStrip1";
             // 
@@ -282,16 +282,16 @@
             groupBox_Pesquisar_Fornecedor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox_Pesquisar_Fornecedor.Location = new Point(24, 248);
             groupBox_Pesquisar_Fornecedor.Name = "groupBox_Pesquisar_Fornecedor";
-            groupBox_Pesquisar_Fornecedor.Size = new Size(330, 120);
+            groupBox_Pesquisar_Fornecedor.Size = new Size(370, 120);
             groupBox_Pesquisar_Fornecedor.TabIndex = 7;
             groupBox_Pesquisar_Fornecedor.TabStop = false;
             groupBox_Pesquisar_Fornecedor.Text = "Pesquisar Fornecedor";
             // 
             // txb_Pesquisar_Fornecedor
             // 
-            txb_Pesquisar_Fornecedor.Location = new Point(146, 29);
+            txb_Pesquisar_Fornecedor.Location = new Point(167, 29);
             txb_Pesquisar_Fornecedor.Name = "txb_Pesquisar_Fornecedor";
-            txb_Pesquisar_Fornecedor.Size = new Size(180, 23);
+            txb_Pesquisar_Fornecedor.Size = new Size(200, 23);
             txb_Pesquisar_Fornecedor.TabIndex = 2;
             // 
             // label1
@@ -300,9 +300,9 @@
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(8, 37);
             label1.Name = "label1";
-            label1.Size = new Size(121, 15);
+            label1.Size = new Size(153, 15);
             label1.TabIndex = 1;
-            label1.Text = "Código/Razão Social:";
+            label1.Text = "Código/CNPJ/Razão Social:";
             // 
             // ToolStrip_Pesquisar_Fornecedor
             // 
@@ -312,7 +312,7 @@
             ToolStrip_Pesquisar_Fornecedor.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Fornecedor, toolStripSeparator1, Btn_Limpar_Campo_Fornecedor });
             ToolStrip_Pesquisar_Fornecedor.Location = new Point(3, 78);
             ToolStrip_Pesquisar_Fornecedor.Name = "ToolStrip_Pesquisar_Fornecedor";
-            ToolStrip_Pesquisar_Fornecedor.Size = new Size(324, 39);
+            ToolStrip_Pesquisar_Fornecedor.Size = new Size(364, 39);
             ToolStrip_Pesquisar_Fornecedor.TabIndex = 0;
             ToolStrip_Pesquisar_Fornecedor.Text = "toolStrip1";
             // 

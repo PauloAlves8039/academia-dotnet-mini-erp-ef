@@ -88,16 +88,16 @@
             groupBox_Pesquisar_Cliente.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox_Pesquisar_Cliente.Location = new Point(24, 233);
             groupBox_Pesquisar_Cliente.Name = "groupBox_Pesquisar_Cliente";
-            groupBox_Pesquisar_Cliente.Size = new Size(300, 120);
+            groupBox_Pesquisar_Cliente.Size = new Size(350, 120);
             groupBox_Pesquisar_Cliente.TabIndex = 1;
             groupBox_Pesquisar_Cliente.TabStop = false;
             groupBox_Pesquisar_Cliente.Text = "Pesquisar Cliente";
             // 
             // txb_Pesquisar_Cliente
             // 
-            txb_Pesquisar_Cliente.Location = new Point(116, 29);
+            txb_Pesquisar_Cliente.Location = new Point(126, 29);
             txb_Pesquisar_Cliente.Name = "txb_Pesquisar_Cliente";
-            txb_Pesquisar_Cliente.Size = new Size(180, 23);
+            txb_Pesquisar_Cliente.Size = new Size(220, 23);
             txb_Pesquisar_Cliente.TabIndex = 2;
             // 
             // label1
@@ -106,9 +106,9 @@
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(8, 37);
             label1.Name = "label1";
-            label1.Size = new Size(87, 15);
+            label1.Size = new Size(112, 15);
             label1.TabIndex = 1;
-            label1.Text = "Código/Nome:";
+            label1.Text = "Código/CPF/Nome:";
             // 
             // ToolStrip_Pesquisar_Cliente
             // 
@@ -118,7 +118,7 @@
             ToolStrip_Pesquisar_Cliente.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Cliente, toolStripSeparator1, Btn_Limpar_Campo_Cliente });
             ToolStrip_Pesquisar_Cliente.Location = new Point(3, 78);
             ToolStrip_Pesquisar_Cliente.Name = "ToolStrip_Pesquisar_Cliente";
-            ToolStrip_Pesquisar_Cliente.Size = new Size(294, 39);
+            ToolStrip_Pesquisar_Cliente.Size = new Size(344, 39);
             ToolStrip_Pesquisar_Cliente.TabIndex = 0;
             ToolStrip_Pesquisar_Cliente.Text = "toolStrip1";
             // 
@@ -162,9 +162,9 @@
             groupBox_Formulario_Cliente.Controls.Add(label4);
             groupBox_Formulario_Cliente.Controls.Add(label3);
             groupBox_Formulario_Cliente.Controls.Add(label2);
-            groupBox_Formulario_Cliente.Location = new Point(348, 233);
+            groupBox_Formulario_Cliente.Location = new Point(408, 233);
             groupBox_Formulario_Cliente.Name = "groupBox_Formulario_Cliente";
-            groupBox_Formulario_Cliente.Size = new Size(500, 300);
+            groupBox_Formulario_Cliente.Size = new Size(440, 300);
             groupBox_Formulario_Cliente.TabIndex = 2;
             groupBox_Formulario_Cliente.TabStop = false;
             groupBox_Formulario_Cliente.Text = "Formulário Cliente";
@@ -177,7 +177,7 @@
             ToolStrip_Formulario_Cliente.Items.AddRange(new ToolStripItem[] { Btn_Salvar_Cliente, toolStripSeparator2, Btn_Limpar_Campos_Cliente, toolStripSeparator3, Btn_Excluir_Cliente });
             ToolStrip_Formulario_Cliente.Location = new Point(3, 258);
             ToolStrip_Formulario_Cliente.Name = "ToolStrip_Formulario_Cliente";
-            ToolStrip_Formulario_Cliente.Size = new Size(494, 39);
+            ToolStrip_Formulario_Cliente.Size = new Size(434, 39);
             ToolStrip_Formulario_Cliente.TabIndex = 10;
             ToolStrip_Formulario_Cliente.Text = "toolStrip1";
             // 

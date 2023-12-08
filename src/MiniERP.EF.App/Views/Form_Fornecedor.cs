@@ -1,5 +1,6 @@
 ﻿using MiniERP.EF.App.Models;
 using MiniERP.EF.App.Services;
+using MiniERP.EF.App.Utils;
 
 namespace MiniERP.EF.App.Views
 {
@@ -26,19 +27,19 @@ namespace MiniERP.EF.App.Views
             if (int.TryParse(pesquisa, out int codigoFornecedor))
             {
                 Fornecedor fornecedorPorCodigo = await _fornecedorService.ObterFornecedorPorCodigo(codigoFornecedor);
-                ExibirResultadoDaPesquisaFornecedor(fornecedorPorCodigo, "código");
+                Utilitario.ExibirResultadoDaPesquisa(fornecedorPorCodigo, "Código", dataGridView_Fornecedor);
                 return;
             }
 
-            if (ValidarCnpj(pesquisa))
+            if (Utilitario.ValidarQuantidadeCaracteresCnpj(pesquisa))
             {
-                Fornecedor fornecedorPorCpf = await _fornecedorService.ObterFornecedorPorCnpj(pesquisa);
-                ExibirResultadoDaPesquisaFornecedor(fornecedorPorCpf, "CPF");
+                Fornecedor fornecedorPorCnpj = await _fornecedorService.ObterFornecedorPorCnpj(pesquisa);
+                Utilitario.ExibirResultadoDaPesquisa(fornecedorPorCnpj, "CNPJ", dataGridView_Fornecedor);
                 return;
             }
 
             Fornecedor fornecedorPorRazaoSocial = await _fornecedorService.ObterFornecedorPorRazaoSocial(pesquisa);
-            ExibirResultadoDaPesquisaFornecedor(fornecedorPorRazaoSocial, "razão social");
+            Utilitario.ExibirResultadoDaPesquisa(fornecedorPorRazaoSocial, "Razão Social", dataGridView_Fornecedor);
         }
 
         private async void Btn_Salvar_Fornecedor_Click(object sender, EventArgs e)
@@ -51,17 +52,17 @@ namespace MiniERP.EF.App.Views
 
             if (string.IsNullOrWhiteSpace(razaoSocial))
             {
-                MostrarMensagemCampoObrigatorio("razão social");
+                Utilitario.MostrarMensagemCampoObrigatorio("Razão Social");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(cnpj))
             {
-                MostrarMensagemCampoObrigatorio("CNPJ");
+                Utilitario.MostrarMensagemCampoObrigatorio("CNPJ");
                 return;
             }
 
-            if (!ValidarQuantidadeCaracteresCnpj(cnpj))
+            if (!Utilitario.ValidarQuantidadeCaracteresCnpj(cnpj))
             {
                 MessageBox.Show("O CNPJ deve ter pelo menos 14 caracteres numéricos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -69,11 +70,11 @@ namespace MiniERP.EF.App.Views
 
             if (string.IsNullOrWhiteSpace(telefone))
             {
-                MostrarMensagemCampoObrigatorio("Telefone");
+                Utilitario.MostrarMensagemCampoObrigatorio("Telefone");
                 return;
             }
 
-            if (!ValidarQuantidadeCaracteresTelefone(telefone))
+            if (!Utilitario.ValidarQuantidadeCaracteresTelefone(telefone))
             {
                 MessageBox.Show("O telefone deve ter 10 ou 11 dígitos numéricos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -81,13 +82,13 @@ namespace MiniERP.EF.App.Views
 
             if (string.IsNullOrWhiteSpace(email))
             {
-                MostrarMensagemCampoObrigatorio("Email");
+                Utilitario.MostrarMensagemCampoObrigatorio("Email");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(endereco))
             {
-                MostrarMensagemCampoObrigatorio("Endereço");
+                Utilitario.MostrarMensagemCampoObrigatorio("Endereço");
                 return;
             }
 
@@ -264,41 +265,6 @@ namespace MiniERP.EF.App.Views
             {
                 MessageBox.Show("Erro ao obter Fornecedor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void ExibirResultadoDaPesquisaFornecedor(Fornecedor fornecedor, string tipoDaPesquisa)
-        {
-            if (fornecedor != null)
-            {
-                dataGridView_Fornecedor.DataSource = new List<Fornecedor> { fornecedor };
-            }
-            else
-            {
-                MessageBox.Show($"Nenhum fornecedor encontrado para o {tipoDaPesquisa} especificado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void MostrarMensagemCampoObrigatorio(string nomeDoCampo)
-        {
-            MessageBox.Show($"O campo {nomeDoCampo} é obrigatório. Por favor, preencha-o.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        private bool ValidarCnpj(string cnpj)
-        {
-            return cnpj.Length == 14;
-        }
-
-        private bool ValidarQuantidadeCaracteresCnpj(string cnpj)
-        {
-            string numerosDoCnpj = new string(cnpj.Where(char.IsDigit).ToArray());
-            return numerosDoCnpj.Length >= 14;
-        }
-
-
-        private bool ValidarQuantidadeCaracteresTelefone(string telefone)
-        {
-            string numerosDoTelefone = new string(telefone.Where(char.IsDigit).ToArray());
-            return numerosDoTelefone.Length == 10 || numerosDoTelefone.Length == 11;
         }
 
         private void LimparCampoDePesquisa()

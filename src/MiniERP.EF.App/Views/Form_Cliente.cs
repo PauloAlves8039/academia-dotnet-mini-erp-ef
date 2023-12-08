@@ -1,5 +1,6 @@
 ﻿using MiniERP.EF.App.Models;
 using MiniERP.EF.App.Services;
+using MiniERP.EF.App.Utils;
 
 namespace MiniERP.EF.App.Views
 {
@@ -26,19 +27,19 @@ namespace MiniERP.EF.App.Views
             if (int.TryParse(pesquisa, out int codigoCliente))
             {
                 Cliente clientePorCodigo = await _clienteService.ObterClientePorCodigo(codigoCliente);
-                ExibirResultadoDaPesquisa(clientePorCodigo, "código");
+                Utilitario.ExibirResultadoDaPesquisa(clientePorCodigo, "Código", dataGridView_Cliente);
                 return;
             }
 
-            if (ValidarCpf(pesquisa))
+            if (Utilitario.ValidarQuantidadeCaracteresCpf(pesquisa))
             {
                 Cliente clientePorCpf = await _clienteService.ObterClientePorCpf(pesquisa);
-                ExibirResultadoDaPesquisa(clientePorCpf, "CPF");
+                Utilitario.ExibirResultadoDaPesquisa(clientePorCpf, "CPF", dataGridView_Cliente);
                 return;
             }
 
             Cliente clientePorNome = await _clienteService.ObterClientePorNome(pesquisa);
-            ExibirResultadoDaPesquisa(clientePorNome, "nome");
+            Utilitario.ExibirResultadoDaPesquisa(clientePorNome, "Nome", dataGridView_Cliente);
         }
 
         private async void Btn_Salvar_Cliente_Click(object sender, EventArgs e)
@@ -51,17 +52,22 @@ namespace MiniERP.EF.App.Views
 
             if (string.IsNullOrWhiteSpace(nome))
             {
-                MostrarMensagemCampoObrigatorio("Nome");
+                Utilitario.MostrarMensagemCampoObrigatorio("Nome");
+                return;
+            }
+
+            if (!Utilitario.ValidarNome(nome))
+            {
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(cpf))
             {
-                MostrarMensagemCampoObrigatorio("CPF");
+                Utilitario.MostrarMensagemCampoObrigatorio("CPF");
                 return;
             }
 
-            if (!ValidarQuantidadeCaracteresCpf(cpf))
+            if (!Utilitario.ValidarQuantidadeCaracteresCpf(cpf))
             {
                 MessageBox.Show("O CPF deve ter pelo menos 11 caracteres numéricos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -69,11 +75,11 @@ namespace MiniERP.EF.App.Views
 
             if (string.IsNullOrWhiteSpace(telefone))
             {
-                MostrarMensagemCampoObrigatorio("Telefone");
+                Utilitario.MostrarMensagemCampoObrigatorio("Telefone");
                 return;
             }
 
-            if (!ValidarTelefone(telefone))
+            if (!Utilitario.ValidarQuantidadeCaracteresTelefone(telefone))
             {
                 MessageBox.Show("O telefone deve ter 10 ou 11 dígitos numéricos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -81,13 +87,18 @@ namespace MiniERP.EF.App.Views
 
             if (string.IsNullOrWhiteSpace(email))
             {
-                MostrarMensagemCampoObrigatorio("Email");
+                Utilitario.MostrarMensagemCampoObrigatorio("Email");
+                return;
+            }
+
+            if (!Utilitario.ValidarFormatoDoEmail(email))
+            {
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(endereco))
             {
-                MostrarMensagemCampoObrigatorio("Endereço");
+                Utilitario.MostrarMensagemCampoObrigatorio("Endereço");
                 return;
             }
 
@@ -151,11 +162,6 @@ namespace MiniERP.EF.App.Views
         private void Btn_Sair_Cliente_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void MostrarMensagemCampoObrigatorio(string nomeDoCampo)
-        {
-            MessageBox.Show($"O campo {nomeDoCampo} é obrigatório. Por favor, preencha-o.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private async Task AdicionarNovoCliente(string nome, string cpf, string telefone, string email, string endereco)
@@ -269,36 +275,6 @@ namespace MiniERP.EF.App.Views
             {
                 MessageBox.Show("Erro ao obter cliente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void ExibirResultadoDaPesquisa(Cliente cliente, string tipoPesquisa)
-        {
-            if (cliente != null)
-            {
-                dataGridView_Cliente.DataSource = new List<Cliente> { cliente };
-            }
-            else
-            {
-                MessageBox.Show($"Nenhum cliente encontrado para o {tipoPesquisa} especificado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private bool ValidarCpf(string cpf)
-        {
-            return cpf.Length == 11;
-        }
-
-        private bool ValidarQuantidadeCaracteresCpf(string cpf)
-        {
-            string numerosDoCpf = new string(cpf.Where(char.IsDigit).ToArray());
-            return numerosDoCpf.Length >= 11;
-        }
-
-
-        private bool ValidarTelefone(string telefone)
-        {
-            string numerosDoTelefone = new string(telefone.Where(char.IsDigit).ToArray());
-            return numerosDoTelefone.Length == 10 || numerosDoTelefone.Length == 11;
         }
 
         private void LimparCampoDePesquisa()
