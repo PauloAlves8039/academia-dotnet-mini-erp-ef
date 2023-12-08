@@ -45,9 +45,8 @@
             toolStripSeparator2 = new ToolStripSeparator();
             Btn_Limpar_Campos_NotaFiscal = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
-            Btn_Excluir_NotaFiscal = new ToolStripButton();
             groupBox_Pesquisar_NotaFiscal = new GroupBox();
-            txb_Pesquisar_Produto = new TextBox();
+            txb_Pesquisar_NotaFiscal = new TextBox();
             label1 = new Label();
             ToolStrip_Pesquisar_NotaFiscal = new ToolStrip();
             Btn_Pesquisar_NotaFiscal = new ToolStripButton();
@@ -67,7 +66,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.nota_fiscal;
-            pictureBox1.Location = new Point(526, 9);
+            pictureBox1.Location = new Point(581, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -79,11 +78,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(390, 19);
+            label7.Location = new Point(330, 9);
             label7.Name = "label7";
-            label7.Size = new Size(130, 30);
+            label7.Size = new Size(245, 30);
             label7.TabIndex = 22;
-            label7.Text = "Nota Fiscal";
+            label7.Text = "Formulário Nota Fiscal";
             // 
             // ToolStrip_NotaFiscal
             // 
@@ -183,7 +182,7 @@
             ToolStrip_Formulario_NotaFiscal.BackColor = Color.Gainsboro;
             ToolStrip_Formulario_NotaFiscal.Dock = DockStyle.Bottom;
             ToolStrip_Formulario_NotaFiscal.ImageScalingSize = new Size(36, 36);
-            ToolStrip_Formulario_NotaFiscal.Items.AddRange(new ToolStripItem[] { Btn_Salvar_NotaFiscal, toolStripSeparator2, Btn_Limpar_Campos_NotaFiscal, toolStripSeparator3, Btn_Excluir_NotaFiscal });
+            ToolStrip_Formulario_NotaFiscal.Items.AddRange(new ToolStripItem[] { Btn_Salvar_NotaFiscal, toolStripSeparator2, Btn_Limpar_Campos_NotaFiscal, toolStripSeparator3 });
             ToolStrip_Formulario_NotaFiscal.Location = new Point(3, 180);
             ToolStrip_Formulario_NotaFiscal.Name = "ToolStrip_Formulario_NotaFiscal";
             ToolStrip_Formulario_NotaFiscal.Size = new Size(494, 39);
@@ -199,6 +198,7 @@
             Btn_Salvar_NotaFiscal.Name = "Btn_Salvar_NotaFiscal";
             Btn_Salvar_NotaFiscal.Size = new Size(36, 36);
             Btn_Salvar_NotaFiscal.Text = "Salvar Nota Fiscal";
+            Btn_Salvar_NotaFiscal.Click += Btn_Salvar_NotaFiscal_Click;
             // 
             // toolStripSeparator2
             // 
@@ -214,25 +214,16 @@
             Btn_Limpar_Campos_NotaFiscal.Name = "Btn_Limpar_Campos_NotaFiscal";
             Btn_Limpar_Campos_NotaFiscal.Size = new Size(36, 36);
             Btn_Limpar_Campos_NotaFiscal.Text = "Limpar Campos";
+            Btn_Limpar_Campos_NotaFiscal.Click += Btn_Limpar_Campos_NotaFiscal_Click;
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 39);
             // 
-            // Btn_Excluir_NotaFiscal
-            // 
-            Btn_Excluir_NotaFiscal.AutoSize = false;
-            Btn_Excluir_NotaFiscal.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Excluir_NotaFiscal.Image = Properties.Resources.lixo;
-            Btn_Excluir_NotaFiscal.ImageTransparentColor = Color.Magenta;
-            Btn_Excluir_NotaFiscal.Name = "Btn_Excluir_NotaFiscal";
-            Btn_Excluir_NotaFiscal.Size = new Size(36, 36);
-            Btn_Excluir_NotaFiscal.Text = "Excluir Nota Fiscal";
-            // 
             // groupBox_Pesquisar_NotaFiscal
             // 
-            groupBox_Pesquisar_NotaFiscal.Controls.Add(txb_Pesquisar_Produto);
+            groupBox_Pesquisar_NotaFiscal.Controls.Add(txb_Pesquisar_NotaFiscal);
             groupBox_Pesquisar_NotaFiscal.Controls.Add(label1);
             groupBox_Pesquisar_NotaFiscal.Controls.Add(ToolStrip_Pesquisar_NotaFiscal);
             groupBox_Pesquisar_NotaFiscal.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -243,12 +234,12 @@
             groupBox_Pesquisar_NotaFiscal.TabStop = false;
             groupBox_Pesquisar_NotaFiscal.Text = "Pesquisar Nota Fiscal";
             // 
-            // txb_Pesquisar_Produto
+            // txb_Pesquisar_NotaFiscal
             // 
-            txb_Pesquisar_Produto.Location = new Point(116, 29);
-            txb_Pesquisar_Produto.Name = "txb_Pesquisar_Produto";
-            txb_Pesquisar_Produto.Size = new Size(230, 23);
-            txb_Pesquisar_Produto.TabIndex = 2;
+            txb_Pesquisar_NotaFiscal.Location = new Point(116, 29);
+            txb_Pesquisar_NotaFiscal.Name = "txb_Pesquisar_NotaFiscal";
+            txb_Pesquisar_NotaFiscal.Size = new Size(230, 23);
+            txb_Pesquisar_NotaFiscal.TabIndex = 2;
             // 
             // label1
             // 
@@ -281,6 +272,7 @@
             Btn_Pesquisar_NotaFiscal.Name = "Btn_Pesquisar_NotaFiscal";
             Btn_Pesquisar_NotaFiscal.Size = new Size(36, 36);
             Btn_Pesquisar_NotaFiscal.Text = "Pesquisar Nota Fiscal";
+            Btn_Pesquisar_NotaFiscal.Click += Btn_Pesquisar_NotaFiscal_Click;
             // 
             // toolStripSeparator1
             // 
@@ -296,6 +288,7 @@
             Btn_Limpar_Campo_NotaFiscal.Name = "Btn_Limpar_Campo_NotaFiscal";
             Btn_Limpar_Campo_NotaFiscal.Size = new Size(36, 36);
             Btn_Limpar_Campo_NotaFiscal.Text = "Limpar Campo";
+            Btn_Limpar_Campo_NotaFiscal.Click += Btn_Limpar_Campo_NotaFiscal_Click;
             // 
             // dataGridView_NotaFiscal
             // 
@@ -309,6 +302,7 @@
             dataGridView_NotaFiscal.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_NotaFiscal.Size = new Size(950, 250);
             dataGridView_NotaFiscal.TabIndex = 18;
+            dataGridView_NotaFiscal.CellDoubleClick += dataGridView_NotaFiscal_CellDoubleClick;
             // 
             // Form_NotaFiscal
             // 
@@ -359,9 +353,8 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton Btn_Limpar_Campos_NotaFiscal;
         private ToolStripSeparator toolStripSeparator3;
-        private ToolStripButton Btn_Excluir_NotaFiscal;
         private GroupBox groupBox_Pesquisar_NotaFiscal;
-        private TextBox txb_Pesquisar_Produto;
+        private TextBox txb_Pesquisar_NotaFiscal;
         private Label label1;
         private ToolStrip ToolStrip_Pesquisar_NotaFiscal;
         private ToolStripButton Btn_Pesquisar_NotaFiscal;
