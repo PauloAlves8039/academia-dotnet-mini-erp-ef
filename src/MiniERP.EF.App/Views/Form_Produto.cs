@@ -1,5 +1,6 @@
 ﻿using MiniERP.EF.App.Models;
 using MiniERP.EF.App.Services;
+using MiniERP.EF.App.ViewModels;
 
 namespace MiniERP.EF.App.Views
 {
@@ -236,7 +237,7 @@ namespace MiniERP.EF.App.Views
         {
             try
             {
-                List<Produto> produtos = await _produtoService.ObterTodosOsProdutos();
+                List<ProdutoViewModel> produtos = await _produtoService.ObterTodosOsProdutosViewModel();
                 dataGridView_Produto.DataSource = produtos;
             }
             catch (Exception ex)

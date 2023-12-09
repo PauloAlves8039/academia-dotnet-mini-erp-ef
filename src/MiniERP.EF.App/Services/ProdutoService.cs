@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiniERP.EF.App.Data;
 using MiniERP.EF.App.Models;
+using MiniERP.EF.App.ViewModels;
 
 namespace MiniERP.EF.App.Services
 {
@@ -10,9 +11,22 @@ namespace MiniERP.EF.App.Services
 
         public ProdutoService() {}
 
-        public async Task<List<Produto>> ObterTodosOsProdutos()
+        public async Task<List<ProdutoViewModel>> ObterTodosOsProdutosViewModel()
         {
-            return await _contexto.Produtos.ToListAsync();
+            var produtos = await _contexto.Produtos
+                .Include(p => p.Fornecedor)
+                .ToListAsync();
+
+            return produtos.Select(p => new ProdutoViewModel
+            {
+                CodigoProduto = p.CodigoProduto,
+                Nome = p.Nome,
+                Preco = p.Preco,
+                Estoque = p.Estoque,
+                Descricao = p.Descricao,
+                FornecedorId = p.FornecedorId,
+                RazaoSocialFornecedor = p.Fornecedor?.RazaoSocial
+            }).ToList();
         }
 
         public async Task<Produto> ObterProdutoPorCodigo(int codigo)

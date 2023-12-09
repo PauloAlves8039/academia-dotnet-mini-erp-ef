@@ -8,7 +8,7 @@ namespace MiniERP.EF.App.Views
     {
         private readonly NotaFiscalService _notaFiscalService = new NotaFiscalService();
         private readonly ClienteService _clientelService = new ClienteService();
-        private readonly ProdutoService _produtolService = new ProdutoService();
+        private readonly ProdutoService _produtoService = new ProdutoService();
 
         public Form_NotaFiscal()
         {
@@ -35,7 +35,7 @@ namespace MiniERP.EF.App.Views
                 return;
             }
 
-            Produto produto = await _produtolService.ObterProdutoPorCodigo(codigoProduto);
+            Produto produto = await _produtoService.ObterProdutoPorCodigo(codigoProduto);
 
             AdicionarItemNotaFiscal(novaNotaFiscal, produto, quantidade);
 
@@ -229,11 +229,11 @@ namespace MiniERP.EF.App.Views
         {
             try
             {
-                List<Produto> produtos = await _produtolService.ObterTodosOsProdutos();
+                List<ProdutoViewModel> produtos = await _produtoService.ObterTodosOsProdutosViewModel();
 
                 cbx_Produto_NotaFiscal.Items.Clear();
 
-                foreach (Produto produto in produtos)
+                foreach (ProdutoViewModel produto in produtos)
                 {
                     cbx_Produto_NotaFiscal.Items.Add(produto.CodigoProduto);
                 }

@@ -10,10 +10,15 @@ namespace MiniERP.EF.App.Models
         }
 
         public int CodigoProduto { get; set; }
+
         public string Nome { get; set; }
+
         public decimal Preco { get; set; }
+
         public int Estoque { get; set; }
+
         public string Descricao { get; set; }
+
         public int? FornecedorId { get; set; }
 
         [Browsable(false)]
