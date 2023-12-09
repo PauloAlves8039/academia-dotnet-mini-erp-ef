@@ -37,20 +37,28 @@ namespace MiniERP.EF.App.Views
 
             Produto produto = await _produtoService.ObterProdutoPorCodigo(codigoProduto);
 
-            AdicionarItemNotaFiscal(novaNotaFiscal, produto, quantidade);
+            bool sucesso = AdicionarItemNotaFiscal(novaNotaFiscal, produto, quantidade);
 
             try
             {
-                await _notaFiscalService.CadastrarNotaFiscal(novaNotaFiscal);
+                if (sucesso)
+                {
+                    await _notaFiscalService.CadastrarNotaFiscal(novaNotaFiscal);
 
-                PreencherDataGridViewNotaFiscal();
+                    PreencherDataGridViewNotaFiscal();
 
-                LimparCamposNotaFiscal();
+                    LimparCamposNotaFiscal();
 
-                MessageBox.Show("Nota fiscal cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Nota fiscal cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar nota fiscal. Estoque insuficiente para adicionar este item.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
+                ReverterAtualizacaoEstoque(produto, quantidade);
                 MessageBox.Show("Erro ao cadastrar nota fiscal: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -172,7 +180,7 @@ namespace MiniERP.EF.App.Views
             return novaNotaFiscal;
         }
 
-        private void AdicionarItemNotaFiscal(NotaFiscal notaFiscal, Produto produto, int quantidade)
+        private bool AdicionarItemNotaFiscal(NotaFiscal notaFiscal, Produto produto, int quantidade)
         {
             if (notaFiscal != null && produto != null && quantidade > 0)
             {
@@ -185,12 +193,44 @@ namespace MiniERP.EF.App.Views
 
                 notaFiscal.ItemNotaFiscals.Add(novoItem);
                 notaFiscal.ValorTotal = _notaFiscalService.CalcularValorTotal(notaFiscal);
+
+                AtualizarEstoqueProduto(produto, quantidade);
+
+                return true;
             }
             else
             {
                 MessageBox.Show("Por favor, selecione um produto e insira uma quantidade válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return false;
             }
         }
+
+        private async void AtualizarEstoqueProduto(Produto produto, int quantidade)
+        {
+            try
+            {
+               if (produto.Estoque >= quantidade)
+                {
+                    produto.Estoque -= quantidade;
+                    await _produtoService.AtualizarProduto(produto);
+                }
+                else
+                {
+                    MessageBox.Show("Estoque insuficiente para adicionar este item à nota fiscal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao atualizar estoque do produto: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ReverterAtualizacaoEstoque(Produto produto, int quantidade)
+        {
+            produto.Estoque += quantidade;
+        }
+
 
         private void dataGridView_NotaFiscal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
