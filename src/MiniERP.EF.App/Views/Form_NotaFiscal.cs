@@ -87,6 +87,22 @@ namespace MiniERP.EF.App.Views
             }
         }
 
+        private void Btn_Abrir_NotaFiscal_Click(object sender, EventArgs e)
+        {
+            int codigoNotaFiscal;
+            if (dataGridView_NotaFiscal.SelectedRows.Count > 0 &&
+                int.TryParse(dataGridView_NotaFiscal.SelectedRows[0].Cells["CodigoNotaFiscal"].Value.ToString(), out codigoNotaFiscal))
+            {
+                Form_DetalhesNotaFiscal detalhesNotaFiscal = new Form_DetalhesNotaFiscal(codigoNotaFiscal);
+
+                detalhesNotaFiscal.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma nota fiscal antes de abrir os detalhes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void Btn_Limpar_Campo_NotaFiscal_Click(object sender, EventArgs e)
         {
             LimparCampoDePesquisa();
@@ -184,8 +200,8 @@ namespace MiniERP.EF.App.Views
 
                 if (int.TryParse(row.Cells["CodigoNotaFiscal"].Value.ToString(), out int condigoNotaFiscal))
                 {
-                    Form_DetalhesNotaFiscal formDetalhesNotaFiscal = new Form_DetalhesNotaFiscal(condigoNotaFiscal);
-                    formDetalhesNotaFiscal.ShowDialog();
+                    Form_DetalhesNotaFiscal detalhesNotaFiscal = new Form_DetalhesNotaFiscal(condigoNotaFiscal);
+                    detalhesNotaFiscal.ShowDialog();
                 }
             }
         }

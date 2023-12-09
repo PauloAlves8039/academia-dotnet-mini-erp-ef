@@ -94,6 +94,7 @@
             // 
             Btn_Imprimir_Nota.AutoSize = false;
             Btn_Imprimir_Nota.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Imprimir_Nota.Image = Properties.Resources.imprimir;
             Btn_Imprimir_Nota.ImageTransparentColor = Color.Magenta;
             Btn_Imprimir_Nota.Name = "Btn_Imprimir_Nota";
             Btn_Imprimir_Nota.Size = new Size(36, 36);
@@ -109,11 +110,12 @@
             // 
             Btn_Salvar_PDF.AutoSize = false;
             Btn_Salvar_PDF.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Salvar_PDF.Image = Properties.Resources.baixar_pdf;
+            Btn_Salvar_PDF.Image = Properties.Resources.download_pdf;
             Btn_Salvar_PDF.ImageTransparentColor = Color.Magenta;
             Btn_Salvar_PDF.Name = "Btn_Salvar_PDF";
             Btn_Salvar_PDF.Size = new Size(36, 36);
             Btn_Salvar_PDF.Text = "Salvar PDF";
+            Btn_Salvar_PDF.Click += Btn_Salvar_PDF_Click;
             // 
             // Btn_Fechar_Detalhes
             // 

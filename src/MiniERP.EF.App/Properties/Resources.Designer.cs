@@ -103,6 +103,16 @@ namespace MiniERP.EF.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_pdf {
+            get {
+                object obj = ResourceManager.GetObject("download-pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
@@ -116,6 +126,16 @@ namespace MiniERP.EF.App.Properties {
         internal static System.Drawing.Bitmap fornecedor {
             get {
                 object obj = ResourceManager.GetObject("fornecedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imprimir {
+            get {
+                object obj = ResourceManager.GetObject("imprimir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

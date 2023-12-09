@@ -130,6 +130,9 @@
   <data name="brush3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\brush3.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="produtos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\produtos.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\lixo.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,13 +145,16 @@
   <data name="fornecedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\fornecedor.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="produtos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\produtos.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="baixar-pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\baixar-pdf.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\imprimir.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nota-fiscal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\nota-fiscal.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="baixar-pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\baixar-pdf.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download-pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\download-pdf.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
