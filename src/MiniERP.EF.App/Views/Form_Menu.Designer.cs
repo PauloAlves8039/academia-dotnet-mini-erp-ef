@@ -44,6 +44,7 @@
             ConsultarInformacoes = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel_Msg = new ToolStripStatusLabel();
+            toolStripStatusLabel_Usuario = new ToolStripStatusLabel();
             toolStripStatusLabel_MsgData = new ToolStripStatusLabel();
             toolStripStatusLabel_Data = new ToolStripStatusLabel();
             toolStripStatusLabel_MsgHora = new ToolStripStatusLabel();
@@ -165,10 +166,10 @@
             // statusStrip1
             // 
             statusStrip1.BackColor = Color.Gainsboro;
-            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel_Msg, toolStripStatusLabel_MsgData, toolStripStatusLabel_Data, toolStripStatusLabel_MsgHora, toolStripStatusLabel_Hora });
-            statusStrip1.Location = new Point(0, 339);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel_Msg, toolStripStatusLabel_Usuario, toolStripStatusLabel_MsgData, toolStripStatusLabel_Data, toolStripStatusLabel_MsgHora, toolStripStatusLabel_Hora });
+            statusStrip1.Location = new Point(0, 337);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(584, 22);
+            statusStrip1.Size = new Size(584, 24);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -176,36 +177,46 @@
             // 
             toolStripStatusLabel_Msg.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel_Msg.Name = "toolStripStatusLabel_Msg";
-            toolStripStatusLabel_Msg.Size = new Size(86, 17);
+            toolStripStatusLabel_Msg.Size = new Size(86, 19);
             toolStripStatusLabel_Msg.Text = "Bem-vindo(a) ";
+            // 
+            // toolStripStatusLabel_Usuario
+            // 
+            toolStripStatusLabel_Usuario.Font = new Font("Comic Sans MS", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripStatusLabel_Usuario.ForeColor = Color.DodgerBlue;
+            toolStripStatusLabel_Usuario.Name = "toolStripStatusLabel_Usuario";
+            toolStripStatusLabel_Usuario.Size = new Size(39, 19);
+            toolStripStatusLabel_Usuario.Text = ".....";
             // 
             // toolStripStatusLabel_MsgData
             // 
             toolStripStatusLabel_MsgData.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel_MsgData.Name = "toolStripStatusLabel_MsgData";
-            toolStripStatusLabel_MsgData.Size = new Size(36, 17);
+            toolStripStatusLabel_MsgData.Size = new Size(36, 19);
             toolStripStatusLabel_MsgData.Text = "Data ";
             // 
             // toolStripStatusLabel_Data
             // 
-            toolStripStatusLabel_Data.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripStatusLabel_Data.Font = new Font("Comic Sans MS", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripStatusLabel_Data.ForeColor = Color.DodgerBlue;
             toolStripStatusLabel_Data.Name = "toolStripStatusLabel_Data";
-            toolStripStatusLabel_Data.Size = new Size(127, 17);
-            toolStripStatusLabel_Data.Text = "toolStripStatusLabel3";
+            toolStripStatusLabel_Data.Size = new Size(39, 19);
+            toolStripStatusLabel_Data.Text = ".....";
             // 
             // toolStripStatusLabel_MsgHora
             // 
             toolStripStatusLabel_MsgHora.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel_MsgHora.Name = "toolStripStatusLabel_MsgHora";
-            toolStripStatusLabel_MsgHora.Size = new Size(37, 17);
+            toolStripStatusLabel_MsgHora.Size = new Size(37, 19);
             toolStripStatusLabel_MsgHora.Text = "Hora ";
             // 
             // toolStripStatusLabel_Hora
             // 
-            toolStripStatusLabel_Hora.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripStatusLabel_Hora.Font = new Font("Comic Sans MS", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripStatusLabel_Hora.ForeColor = Color.DodgerBlue;
             toolStripStatusLabel_Hora.Name = "toolStripStatusLabel_Hora";
-            toolStripStatusLabel_Hora.Size = new Size(127, 17);
-            toolStripStatusLabel_Hora.Text = "toolStripStatusLabel5";
+            toolStripStatusLabel_Hora.Size = new Size(39, 19);
+            toolStripStatusLabel_Hora.Text = ".....";
             // 
             // panel_Cliente
             // 
@@ -308,7 +319,7 @@
             ToolStrip_Menu.Dock = DockStyle.Bottom;
             ToolStrip_Menu.ImageScalingSize = new Size(36, 36);
             ToolStrip_Menu.Items.AddRange(new ToolStripItem[] { Btn_Fechar_Menu });
-            ToolStrip_Menu.Location = new Point(0, 300);
+            ToolStrip_Menu.Location = new Point(0, 298);
             ToolStrip_Menu.Name = "ToolStrip_Menu";
             ToolStrip_Menu.Size = new Size(584, 39);
             ToolStrip_Menu.TabIndex = 8;
@@ -347,6 +358,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Mini ERP";
             FormClosed += Form_Menu_FormClosed;
+            Load += Form_Menu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);
@@ -396,5 +408,6 @@
         private Label label1;
         private ToolStrip ToolStrip_Menu;
         private ToolStripButton Btn_Fechar_Menu;
+        private ToolStripStatusLabel toolStripStatusLabel_Usuario;
     }
 }

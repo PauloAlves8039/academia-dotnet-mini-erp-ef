@@ -1,3 +1,5 @@
+using MiniERP.EF.App.Views;
+
 namespace MiniERP.EF.App
 {
     public partial class Form_Inicio : Form
@@ -16,8 +18,8 @@ namespace MiniERP.EF.App
             else
             {
                 Timer_Inicio.Enabled = false;
-                Form_Menu formMenu = new Form_Menu();
-                formMenu.Show();
+                Form_Login formLogin = new Form_Login();
+                formLogin.Show();
                 Visible = false;
             }
         }

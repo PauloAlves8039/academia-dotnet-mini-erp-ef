@@ -4,9 +4,16 @@ namespace MiniERP.EF.App
 {
     public partial class Form_Menu : Form
     {
-        public Form_Menu()
+        public string NomeUsuario { get; set; }
+
+        public Form_Menu(string nomeUsuario)
         {
             InitializeComponent();
+        }
+
+        private void Form_Menu_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel_Usuario.Text = NomeUsuario;
         }
 
         private void Form_Menu_FormClosed(object sender, FormClosedEventArgs e)
