@@ -154,6 +154,12 @@ namespace MiniERP.EF.App.Views
             LimparCampoDePesquisa();
         }
 
+        private void Btn_Info_Produto_Click(object sender, EventArgs e)
+        {
+            Form_Info informacoes = new Form_Info();
+            informacoes.Show();
+        }
+
         private void Btn_Limpar_Campos_Cliente_Click(object sender, EventArgs e)
         {
             LimparCamposCliente();

@@ -54,6 +54,8 @@
             Btn_Limpar_Campo_NotaFiscal = new ToolStripButton();
             Btn_Abrir_NotaFiscal = new ToolStripButton();
             dataGridView_NotaFiscal = new DataGridView();
+            Btn_Info_NotasFiscais = new ToolStripButton();
+            toolStripSeparator4 = new ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ToolStrip_NotaFiscal.SuspendLayout();
             groupBox_Formulario_Produto.SuspendLayout();
@@ -257,7 +259,7 @@
             ToolStrip_Pesquisar_NotaFiscal.BackColor = Color.Gainsboro;
             ToolStrip_Pesquisar_NotaFiscal.Dock = DockStyle.Bottom;
             ToolStrip_Pesquisar_NotaFiscal.ImageScalingSize = new Size(36, 36);
-            ToolStrip_Pesquisar_NotaFiscal.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_NotaFiscal, toolStripSeparator1, Btn_Limpar_Campo_NotaFiscal, Btn_Abrir_NotaFiscal });
+            ToolStrip_Pesquisar_NotaFiscal.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_NotaFiscal, toolStripSeparator1, Btn_Limpar_Campo_NotaFiscal, Btn_Info_NotasFiscais, toolStripSeparator4, Btn_Abrir_NotaFiscal });
             ToolStrip_Pesquisar_NotaFiscal.Location = new Point(3, 78);
             ToolStrip_Pesquisar_NotaFiscal.Name = "ToolStrip_Pesquisar_NotaFiscal";
             ToolStrip_Pesquisar_NotaFiscal.Size = new Size(344, 39);
@@ -282,7 +284,6 @@
             // 
             // Btn_Limpar_Campo_NotaFiscal
             // 
-            Btn_Limpar_Campo_NotaFiscal.Alignment = ToolStripItemAlignment.Right;
             Btn_Limpar_Campo_NotaFiscal.AutoSize = false;
             Btn_Limpar_Campo_NotaFiscal.DisplayStyle = ToolStripItemDisplayStyle.Image;
             Btn_Limpar_Campo_NotaFiscal.Image = Properties.Resources.brush3;
@@ -316,6 +317,23 @@
             dataGridView_NotaFiscal.Size = new Size(950, 250);
             dataGridView_NotaFiscal.TabIndex = 18;
             dataGridView_NotaFiscal.CellDoubleClick += dataGridView_NotaFiscal_CellDoubleClick;
+            // 
+            // Btn_Info_NotasFiscais
+            // 
+            Btn_Info_NotasFiscais.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_NotasFiscais.AutoSize = false;
+            Btn_Info_NotasFiscais.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_NotasFiscais.Image = Properties.Resources.info;
+            Btn_Info_NotasFiscais.ImageTransparentColor = Color.Magenta;
+            Btn_Info_NotasFiscais.Name = "Btn_Info_NotasFiscais";
+            Btn_Info_NotasFiscais.Size = new Size(36, 36);
+            Btn_Info_NotasFiscais.Text = "Informações";
+            Btn_Info_NotasFiscais.Click += Btn_Info_NotasFiscais_Click;
+            // 
+            // toolStripSeparator4
+            // 
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(6, 39);
             // 
             // Form_NotaFiscal
             // 
@@ -379,5 +397,7 @@
         private Label label2;
         private NumericUpDown nud_Quantidade_NotaFiscal;
         private ToolStripButton Btn_Abrir_NotaFiscal;
+        private ToolStripButton Btn_Info_NotasFiscais;
+        private ToolStripSeparator toolStripSeparator4;
     }
 }

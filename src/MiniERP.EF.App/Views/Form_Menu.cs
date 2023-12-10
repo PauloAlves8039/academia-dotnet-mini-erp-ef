@@ -101,6 +101,12 @@ namespace MiniERP.EF.App
             notaFiscal.Show();
         }
 
+        private void AbrirFormSobre_Click(object sender, EventArgs e)
+        {
+            Form_Sobre sobre = new Form_Sobre();
+            sobre.Show();
+        }
+
         private void AbrirFormInfo()
         {
             Form_Info info = new Form_Info();

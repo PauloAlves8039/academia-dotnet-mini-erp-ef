@@ -58,6 +58,7 @@
             toolStripSeparator1 = new ToolStripSeparator();
             Btn_Limpar_Campo_Fornecedor = new ToolStripButton();
             dataGridView_Fornecedor = new DataGridView();
+            Btn_Info_Fornecedor = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ToolStrip_Fornecedor.SuspendLayout();
             groupBox_Formulario_Fornecedor.SuspendLayout();
@@ -309,12 +310,11 @@
             ToolStrip_Pesquisar_Fornecedor.BackColor = Color.Gainsboro;
             ToolStrip_Pesquisar_Fornecedor.Dock = DockStyle.Bottom;
             ToolStrip_Pesquisar_Fornecedor.ImageScalingSize = new Size(36, 36);
-            ToolStrip_Pesquisar_Fornecedor.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Fornecedor, toolStripSeparator1, Btn_Limpar_Campo_Fornecedor });
+            ToolStrip_Pesquisar_Fornecedor.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Fornecedor, toolStripSeparator1, Btn_Limpar_Campo_Fornecedor, Btn_Info_Fornecedor });
             ToolStrip_Pesquisar_Fornecedor.Location = new Point(3, 78);
             ToolStrip_Pesquisar_Fornecedor.Name = "ToolStrip_Pesquisar_Fornecedor";
             ToolStrip_Pesquisar_Fornecedor.Size = new Size(364, 39);
             ToolStrip_Pesquisar_Fornecedor.TabIndex = 0;
-            ToolStrip_Pesquisar_Fornecedor.Text = "toolStrip1";
             // 
             // Btn_Pesquisar_Fornecedor
             // 
@@ -355,6 +355,18 @@
             dataGridView_Fornecedor.Size = new Size(950, 160);
             dataGridView_Fornecedor.TabIndex = 6;
             dataGridView_Fornecedor.CellDoubleClick += dataGridView_Fornecedor_CellDoubleClick;
+            // 
+            // Btn_Info_Fornecedor
+            // 
+            Btn_Info_Fornecedor.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_Fornecedor.AutoSize = false;
+            Btn_Info_Fornecedor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_Fornecedor.Image = Properties.Resources.info;
+            Btn_Info_Fornecedor.ImageTransparentColor = Color.Magenta;
+            Btn_Info_Fornecedor.Name = "Btn_Info_Fornecedor";
+            Btn_Info_Fornecedor.Size = new Size(36, 36);
+            Btn_Info_Fornecedor.Text = "Informações";
+            Btn_Info_Fornecedor.Click += Btn_Info_Fornecedor_Click;
             // 
             // Form_Fornecedor
             // 
@@ -421,5 +433,6 @@
         private ToolStripButton Btn_Limpar_Campo_Fornecedor;
         private DataGridView dataGridView_Fornecedor;
         private MaskedTextBox mktb_CNPJ_Fornecedor;
+        private ToolStripButton Btn_Info_Fornecedor;
     }
 }

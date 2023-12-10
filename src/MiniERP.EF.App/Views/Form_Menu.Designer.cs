@@ -40,7 +40,8 @@
             ConsultarFornecedor = new ToolStripMenuItem();
             notaFiscalToolStripMenuItem = new ToolStripMenuItem();
             ConsultarNotaFiscal = new ToolStripMenuItem();
-            sobreToolStripMenuItem = new ToolStripMenuItem();
+            SobreToolStripMenuItem = new ToolStripMenuItem();
+            AbrirFormSobre = new ToolStripMenuItem();
             ConsultarInformacoes = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel_Msg = new ToolStripStatusLabel();
@@ -81,7 +82,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.Gainsboro;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, produtoToolStripMenuItem, fornecedorToolStripMenuItem, notaFiscalToolStripMenuItem, sobreToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, produtoToolStripMenuItem, fornecedorToolStripMenuItem, notaFiscalToolStripMenuItem, SobreToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(784, 25);
@@ -148,18 +149,25 @@
             ConsultarNotaFiscal.Text = "Consultar";
             ConsultarNotaFiscal.Click += ConsultarNotaFiscal_Click;
             // 
-            // sobreToolStripMenuItem
+            // SobreToolStripMenuItem
             // 
-            sobreToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ConsultarInformacoes });
-            sobreToolStripMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            sobreToolStripMenuItem.Size = new Size(55, 21);
-            sobreToolStripMenuItem.Text = "Sobre";
+            SobreToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { AbrirFormSobre, ConsultarInformacoes });
+            SobreToolStripMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            SobreToolStripMenuItem.Name = "SobreToolStripMenuItem";
+            SobreToolStripMenuItem.Size = new Size(55, 21);
+            SobreToolStripMenuItem.Text = "Sobre";
+            // 
+            // AbrirFormSobre
+            // 
+            AbrirFormSobre.Name = "AbrirFormSobre";
+            AbrirFormSobre.Size = new Size(180, 22);
+            AbrirFormSobre.Text = "Projeto";
+            AbrirFormSobre.Click += AbrirFormSobre_Click;
             // 
             // ConsultarInformacoes
             // 
             ConsultarInformacoes.Name = "ConsultarInformacoes";
-            ConsultarInformacoes.Size = new Size(152, 22);
+            ConsultarInformacoes.Size = new Size(180, 22);
             ConsultarInformacoes.Text = "Informações";
             ConsultarInformacoes.Click += ConsultarInformacoes_Click;
             // 
@@ -403,11 +411,12 @@
         private PictureBox PictureBox_Produto;
         private Panel panel_NotaFiscal;
         private PictureBox PictureBox_NotaFiscal;
-        private ToolStripMenuItem sobreToolStripMenuItem;
+        private ToolStripMenuItem SobreToolStripMenuItem;
         private ToolStripMenuItem ConsultarInformacoes;
         private Label label1;
         private ToolStrip ToolStrip_Menu;
         private ToolStripButton Btn_Fechar_Menu;
         private ToolStripStatusLabel toolStripStatusLabel_Usuario;
+        private ToolStripMenuItem AbrirFormSobre;
     }
 }

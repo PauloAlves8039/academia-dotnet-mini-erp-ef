@@ -58,6 +58,7 @@
             toolStripSeparator1 = new ToolStripSeparator();
             Btn_Limpar_Campo_Produto = new ToolStripButton();
             dataGridView_Produto = new DataGridView();
+            Btn_Info_Produto = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ToolStrip_Produto.SuspendLayout();
             groupBox_Formulario_Produto.SuspendLayout();
@@ -309,7 +310,7 @@
             ToolStrip_Pesquisar_Produto.BackColor = Color.Gainsboro;
             ToolStrip_Pesquisar_Produto.Dock = DockStyle.Bottom;
             ToolStrip_Pesquisar_Produto.ImageScalingSize = new Size(36, 36);
-            ToolStrip_Pesquisar_Produto.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Produto, toolStripSeparator1, Btn_Limpar_Campo_Produto });
+            ToolStrip_Pesquisar_Produto.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Produto, toolStripSeparator1, Btn_Limpar_Campo_Produto, Btn_Info_Produto });
             ToolStrip_Pesquisar_Produto.Location = new Point(3, 78);
             ToolStrip_Pesquisar_Produto.Name = "ToolStrip_Pesquisar_Produto";
             ToolStrip_Pesquisar_Produto.Size = new Size(344, 39);
@@ -355,6 +356,18 @@
             dataGridView_Produto.Size = new Size(950, 160);
             dataGridView_Produto.TabIndex = 12;
             dataGridView_Produto.CellDoubleClick += dataGridView_Produto_CellDoubleClick;
+            // 
+            // Btn_Info_Produto
+            // 
+            Btn_Info_Produto.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_Produto.AutoSize = false;
+            Btn_Info_Produto.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_Produto.Image = Properties.Resources.info;
+            Btn_Info_Produto.ImageTransparentColor = Color.Magenta;
+            Btn_Info_Produto.Name = "Btn_Info_Produto";
+            Btn_Info_Produto.Size = new Size(36, 36);
+            Btn_Info_Produto.Text = "Informações";
+            Btn_Info_Produto.Click += Btn_Info_Produto_Click;
             // 
             // Form_Produto
             // 
@@ -426,5 +439,6 @@
         private ComboBox cbx_Fornecedor;
         private TextBox txb_Descricao_Produto;
         private Label label8;
+        private ToolStripButton Btn_Info_Produto;
     }
 }

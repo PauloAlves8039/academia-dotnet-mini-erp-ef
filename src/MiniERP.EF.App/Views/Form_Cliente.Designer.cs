@@ -58,6 +58,7 @@
             Btn_Sair_Cliente = new ToolStripButton();
             label7 = new Label();
             pictureBox1 = new PictureBox();
+            Btn_Info_Produto = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Cliente).BeginInit();
             groupBox_Pesquisar_Cliente.SuspendLayout();
             ToolStrip_Pesquisar_Cliente.SuspendLayout();
@@ -115,7 +116,7 @@
             ToolStrip_Pesquisar_Cliente.BackColor = Color.Gainsboro;
             ToolStrip_Pesquisar_Cliente.Dock = DockStyle.Bottom;
             ToolStrip_Pesquisar_Cliente.ImageScalingSize = new Size(36, 36);
-            ToolStrip_Pesquisar_Cliente.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Cliente, toolStripSeparator1, Btn_Limpar_Campo_Cliente });
+            ToolStrip_Pesquisar_Cliente.Items.AddRange(new ToolStripItem[] { Btn_Pesquisar_Cliente, toolStripSeparator1, Btn_Limpar_Campo_Cliente, Btn_Info_Produto });
             ToolStrip_Pesquisar_Cliente.Location = new Point(3, 78);
             ToolStrip_Pesquisar_Cliente.Name = "ToolStrip_Pesquisar_Cliente";
             ToolStrip_Pesquisar_Cliente.Size = new Size(344, 39);
@@ -356,6 +357,18 @@
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
+            // Btn_Info_Produto
+            // 
+            Btn_Info_Produto.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_Produto.AutoSize = false;
+            Btn_Info_Produto.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_Produto.Image = Properties.Resources.info;
+            Btn_Info_Produto.ImageTransparentColor = Color.Magenta;
+            Btn_Info_Produto.Name = "Btn_Info_Produto";
+            Btn_Info_Produto.Size = new Size(36, 36);
+            Btn_Info_Produto.Text = "Informações";
+            Btn_Info_Produto.Click += Btn_Info_Produto_Click;
+            // 
             // Form_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -421,5 +434,6 @@
         private ToolStripButton Btn_Sair_Cliente;
         private Label label7;
         private PictureBox pictureBox1;
+        private ToolStripButton Btn_Info_Produto;
     }
 }
