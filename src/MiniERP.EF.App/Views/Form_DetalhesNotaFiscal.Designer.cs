@@ -499,6 +499,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(784, 812);
             Controls.Add(pictureBox1);
             Controls.Add(ToolStrip_Detalhes_NotaFiscal);

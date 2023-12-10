@@ -56,10 +56,10 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Erro ao cadastrar nota fiscal. Estoque insuficiente para adicionar este item.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
                 ReverterAtualizacaoEstoque(produto, quantidade);
-                MessageBox.Show("Erro ao cadastrar nota fiscal: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao cadastrar nota fiscal: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -84,9 +84,9 @@ namespace MiniERP.EF.App.Views
                         MessageBox.Show("Nota fiscal não encontrada.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
-                    MessageBox.Show("Erro ao pesquisar nota fiscal: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao pesquisar nota fiscal: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -162,9 +162,9 @@ namespace MiniERP.EF.App.Views
                 dataGridView_NotaFiscal.Columns["ValorUnitario"].DisplayIndex = 12;
                 dataGridView_NotaFiscal.Columns["ValorTotal"].DisplayIndex = 13;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao carregar produtos: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao carregar produtos: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -201,7 +201,6 @@ namespace MiniERP.EF.App.Views
             else
             {
                 MessageBox.Show("Por favor, selecione um produto e insira uma quantidade válida.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 return false;
             }
         }
@@ -220,9 +219,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Estoque insuficiente para adicionar este item à nota fiscal.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show($"Erro ao atualizar estoque do produto: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao atualizar estoque do produto: {exception.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

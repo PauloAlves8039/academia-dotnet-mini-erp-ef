@@ -1,6 +1,7 @@
 ﻿using MiniERP.EF.App.Models;
 using MiniERP.EF.App.Services.Implementations;
 using MiniERP.EF.App.ViewModels;
+using System;
 
 namespace MiniERP.EF.App.Views
 {
@@ -125,9 +126,9 @@ namespace MiniERP.EF.App.Views
                         MessageBox.Show("Produto não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
-                    MessageBox.Show("Erro ao excluir produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao excluir produto: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -181,9 +182,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Fornecedor não encontrado. Por favor, selecione um fornecedor válido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao adicionar novo produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao adicionar novo produto: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -214,9 +215,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Produto não encontrado para atualização.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao atualizar Produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao atualizar Produto: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -226,9 +227,9 @@ namespace MiniERP.EF.App.Views
             {
                 DataGridViewRow row = dataGridView_Produto.Rows[e.RowIndex];
 
-                if (int.TryParse(row.Cells["CodigoProduto"].Value.ToString(), out int produtoId))
+                if (int.TryParse(row.Cells["CodigoProduto"].Value.ToString(), out int codigoProduto))
                 {
-                    PreencherCamposComDadosDoProduto(produtoId);
+                    PreencherCamposComDadosDoProduto(codigoProduto);
                 }
             }
         }
@@ -240,9 +241,9 @@ namespace MiniERP.EF.App.Views
                 List<ProdutoViewModel> produtos = await _produtoService.ObterTodosOsProdutosViewModel();
                 dataGridView_Produto.DataSource = produtos;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao carregar produtos: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao carregar produtos: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -268,9 +269,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Produto não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao obter Produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao obter Produto: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

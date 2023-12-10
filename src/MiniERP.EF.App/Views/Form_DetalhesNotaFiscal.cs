@@ -61,9 +61,9 @@ namespace MiniERP.EF.App.Views
                     Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao obter detalhes da nota fiscal: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao obter detalhes da nota fiscal: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -91,9 +91,9 @@ namespace MiniERP.EF.App.Views
                 GerarPdfNotaFiscal();
                 MessageBox.Show("Nota baixada como PDF.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao baixar nota fiscal como PDF: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao baixar nota fiscal como PDF: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -143,9 +143,9 @@ namespace MiniERP.EF.App.Views
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao salvar nota fiscal como PDF: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao salvar nota fiscal como PDF: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -155,12 +155,12 @@ namespace MiniERP.EF.App.Views
 
             tabela.AddCell(new Cell(1, 2).Add(new Paragraph("Dados do Cliente")).SetBold().SetTextAlignment(TextAlignment.CENTER));
 
-            AdicionarLinhaNaTabela(tabela, "Código do Cliente:", lbl_Codigo_Cliente.Text);
-            AdicionarLinhaNaTabela(tabela, "Cliente:", lbl_Nome_Cliente.Text);
-            AdicionarLinhaNaTabela(tabela, "CPF:", lbl_CPF_Cliente.Text);
-            AdicionarLinhaNaTabela(tabela, "Telefone:", lbl_Telefone_Cliente.Text);
-            AdicionarLinhaNaTabela(tabela, "Email:", lbl_Email_Cliente.Text);
-            AdicionarLinhaNaTabela(tabela, "Endereço:", lbl_Endereco_Cliente.Text);
+            AdicionarLinhaNaTabela(tabela, "Código do Cliente", lbl_Codigo_Cliente.Text);
+            AdicionarLinhaNaTabela(tabela, "Cliente", lbl_Nome_Cliente.Text);
+            AdicionarLinhaNaTabela(tabela, "CPF", lbl_CPF_Cliente.Text);
+            AdicionarLinhaNaTabela(tabela, "Telefone", lbl_Telefone_Cliente.Text);
+            AdicionarLinhaNaTabela(tabela, "Email", lbl_Email_Cliente.Text);
+            AdicionarLinhaNaTabela(tabela, "Endereço", lbl_Endereco_Cliente.Text);
 
             return tabela;
         }
@@ -171,11 +171,11 @@ namespace MiniERP.EF.App.Views
 
             tabela.AddCell(new Cell(1, 2).Add(new Paragraph("Dados do Produto")).SetBold().SetTextAlignment(TextAlignment.CENTER));
 
-            AdicionarLinhaNaTabela(tabela, "Código do Produto:", lbl_Codigo_Produto.Text);
-            AdicionarLinhaNaTabela(tabela, "Produto:", lbl_Nome_Produto.Text);
-            AdicionarLinhaNaTabela(tabela, "Descrição:", lbl_Descricao_Produto.Text);
-            AdicionarLinhaNaTabela(tabela, "Quantidade:", lbl_Quantidade_Produto.Text);
-            AdicionarLinhaNaTabela(tabela, "Valor Unitário:", lbl_ValorUnitario_Produto.Text);
+            AdicionarLinhaNaTabela(tabela, "Código do Produto", lbl_Codigo_Produto.Text);
+            AdicionarLinhaNaTabela(tabela, "Produto", lbl_Nome_Produto.Text);
+            AdicionarLinhaNaTabela(tabela, "Descrição", lbl_Descricao_Produto.Text);
+            AdicionarLinhaNaTabela(tabela, "Quantidade", lbl_Quantidade_Produto.Text);
+            AdicionarLinhaNaTabela(tabela, "Valor Unitário", lbl_ValorUnitario_Produto.Text);
 
             return tabela;
         }
@@ -186,7 +186,7 @@ namespace MiniERP.EF.App.Views
 
             tabela.AddCell(new Cell(1, 2).Add(new Paragraph("Valor Total")).SetBold().SetTextAlignment(TextAlignment.CENTER));
 
-            AdicionarLinhaNaTabela(tabela, "Valor Total:", lbl_ValorTotal_NotaFiscal.Text);
+            AdicionarLinhaNaTabela(tabela, "Valor Total", lbl_ValorTotal_NotaFiscal.Text);
 
             return tabela;
         }

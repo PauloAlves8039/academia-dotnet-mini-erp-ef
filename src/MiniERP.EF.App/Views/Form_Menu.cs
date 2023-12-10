@@ -24,7 +24,7 @@ namespace MiniERP.EF.App
         private void Timer_Menu_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabel_Data.Text = DateTime.Now.ToShortDateString();
-            toolStripStatusLabel_Hora.Text = DateTime.Now.ToLongTimeString();
+            toolStripStatusLabel_Hora.Text = DateTime.Now.ToShortTimeString();
         }
 
         private void ConsultarCliente_Click(object sender, EventArgs e)

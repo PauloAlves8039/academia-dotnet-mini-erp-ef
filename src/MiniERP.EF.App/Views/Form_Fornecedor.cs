@@ -128,9 +128,9 @@ namespace MiniERP.EF.App.Views
                         MessageBox.Show("Fornecedor não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
-                    MessageBox.Show("Erro ao excluir fornecedor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao excluir fornecedor: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -175,9 +175,9 @@ namespace MiniERP.EF.App.Views
 
                 MessageBox.Show("Novo fornecedor adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao adicionar novo fornecdor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao adicionar novo fornecdor: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -208,9 +208,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Fornecedor não encontrado para atualização.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao atualizar Fornecedor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao atualizar Fornecedor: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -220,9 +220,9 @@ namespace MiniERP.EF.App.Views
             {
                 DataGridViewRow row = dataGridView_Fornecedor.Rows[e.RowIndex];
 
-                if (int.TryParse(row.Cells["CodigoFornecedor"].Value.ToString(), out int fornecedorId))
+                if (int.TryParse(row.Cells["CodigoFornecedor"].Value.ToString(), out int codigoFornecedor))
                 {
-                    PreencherCamposComDadosDoFornecedor(fornecedorId);
+                    PreencherCamposComDadosDoFornecedor(codigoFornecedor);
                 }
             }
         }
@@ -234,17 +234,17 @@ namespace MiniERP.EF.App.Views
                 List<Fornecedor> fornecedores = await _fornecedorService.ObterTodosOsFornecedores();
                 dataGridView_Fornecedor.DataSource = fornecedores;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao carregar fornecedores: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao carregar fornecedores: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private async void PreencherCamposComDadosDoFornecedor(int fornecedorId)
+        private async void PreencherCamposComDadosDoFornecedor(int codigoFornecedor)
         {
             try
             {
-                Fornecedor fornecedor = await _fornecedorService.ObterFornecedorPorCodigo(fornecedorId);
+                Fornecedor fornecedor = await _fornecedorService.ObterFornecedorPorCodigo(codigoFornecedor);
 
                 if (fornecedor != null)
                 {
@@ -261,9 +261,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Fornecedor não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao obter Fornecedor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao obter Fornecedor: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

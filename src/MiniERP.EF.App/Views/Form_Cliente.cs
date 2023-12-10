@@ -102,9 +102,9 @@ namespace MiniERP.EF.App.Views
                 return;
             }
 
-            if (int.TryParse(txb_Pesquisar_Cliente.Text, out int clienteId))
+            if (int.TryParse(txb_Pesquisar_Cliente.Text, out int codigoCliente))
             {
-                await AtualizarCliente(clienteId, nome, cpf, telefone, email, endereco);
+                await AtualizarCliente(codigoCliente, nome, cpf, telefone, email, endereco);
             }
             else
             {
@@ -138,9 +138,9 @@ namespace MiniERP.EF.App.Views
                         MessageBox.Show("Cliente não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
-                    MessageBox.Show("Erro ao excluir cliente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao excluir cliente: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -185,9 +185,9 @@ namespace MiniERP.EF.App.Views
 
                 MessageBox.Show("Novo cliente adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao adicionar novo cliente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao adicionar novo cliente: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -218,9 +218,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Cliente não encontrado para atualização.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao atualizar cliente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao atualizar cliente: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -231,9 +231,9 @@ namespace MiniERP.EF.App.Views
                 List<Cliente> listaDeClientes = await _clienteService.ObeterTodosOsClientes();
                 dataGridView_Cliente.DataSource = listaDeClientes;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao carregar clientes: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao carregar clientes: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -243,18 +243,18 @@ namespace MiniERP.EF.App.Views
             {
                 DataGridViewRow row = dataGridView_Cliente.Rows[e.RowIndex];
 
-                if (int.TryParse(row.Cells["CodigoCliente"].Value.ToString(), out int clienteId))
+                if (int.TryParse(row.Cells["CodigoCliente"].Value.ToString(), out int codigoCliente))
                 {
-                    PreencherCamposComDadosDoCliente(clienteId);
+                    PreencherCamposComDadosDoCliente(codigoCliente);
                 }
             }
         }
 
-        private async void PreencherCamposComDadosDoCliente(int clienteId)
+        private async void PreencherCamposComDadosDoCliente(int codigoCliente)
         {
             try
             {
-                Cliente cliente = await _clienteService.ObterClientePorCodigo(clienteId);
+                Cliente cliente = await _clienteService.ObterClientePorCodigo(codigoCliente);
 
                 if (cliente != null)
                 {
@@ -271,9 +271,9 @@ namespace MiniERP.EF.App.Views
                     MessageBox.Show("Cliente não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("Erro ao obter cliente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao obter cliente: " + exception.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

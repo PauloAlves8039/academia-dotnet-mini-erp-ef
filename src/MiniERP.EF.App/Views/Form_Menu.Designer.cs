@@ -84,7 +84,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, produtoToolStripMenuItem, fornecedorToolStripMenuItem, notaFiscalToolStripMenuItem, sobreToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(584, 25);
+            menuStrip1.Size = new Size(784, 25);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -169,7 +169,7 @@
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel_Msg, toolStripStatusLabel_Usuario, toolStripStatusLabel_MsgData, toolStripStatusLabel_Data, toolStripStatusLabel_MsgHora, toolStripStatusLabel_Hora });
             statusStrip1.Location = new Point(0, 337);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(584, 24);
+            statusStrip1.Size = new Size(784, 24);
             statusStrip1.TabIndex = 2;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -221,7 +221,7 @@
             // panel_Cliente
             // 
             panel_Cliente.Controls.Add(PictureBox_Cliente);
-            panel_Cliente.Location = new Point(79, 121);
+            panel_Cliente.Location = new Point(177, 131);
             panel_Cliente.Name = "panel_Cliente";
             panel_Cliente.Size = new Size(80, 80);
             panel_Cliente.TabIndex = 3;
@@ -242,7 +242,7 @@
             // panel_Fornedor
             // 
             panel_Fornedor.Controls.Add(PictureBox_Fornecedor);
-            panel_Fornedor.Location = new Point(297, 121);
+            panel_Fornedor.Location = new Point(395, 131);
             panel_Fornedor.Name = "panel_Fornedor";
             panel_Fornedor.Size = new Size(80, 80);
             panel_Fornedor.TabIndex = 4;
@@ -263,7 +263,7 @@
             // panel_Produto
             // 
             panel_Produto.Controls.Add(PictureBox_Produto);
-            panel_Produto.Location = new Point(188, 121);
+            panel_Produto.Location = new Point(286, 131);
             panel_Produto.Name = "panel_Produto";
             panel_Produto.Size = new Size(80, 80);
             panel_Produto.TabIndex = 5;
@@ -284,7 +284,7 @@
             // panel_NotaFiscal
             // 
             panel_NotaFiscal.Controls.Add(PictureBox_NotaFiscal);
-            panel_NotaFiscal.Location = new Point(408, 121);
+            panel_NotaFiscal.Location = new Point(506, 131);
             panel_NotaFiscal.Name = "panel_NotaFiscal";
             panel_NotaFiscal.Size = new Size(80, 80);
             panel_NotaFiscal.TabIndex = 6;
@@ -307,7 +307,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.DodgerBlue;
-            label1.Location = new Point(234, 45);
+            label1.Location = new Point(332, 42);
             label1.Name = "label1";
             label1.Size = new Size(101, 30);
             label1.TabIndex = 7;
@@ -321,7 +321,7 @@
             ToolStrip_Menu.Items.AddRange(new ToolStripItem[] { Btn_Fechar_Menu });
             ToolStrip_Menu.Location = new Point(0, 298);
             ToolStrip_Menu.Name = "ToolStrip_Menu";
-            ToolStrip_Menu.Size = new Size(584, 39);
+            ToolStrip_Menu.Size = new Size(784, 39);
             ToolStrip_Menu.TabIndex = 8;
             ToolStrip_Menu.Text = "toolStrip1";
             // 
@@ -342,7 +342,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(584, 361);
+            ClientSize = new Size(784, 361);
             Controls.Add(ToolStrip_Menu);
             Controls.Add(label1);
             Controls.Add(panel_NotaFiscal);
