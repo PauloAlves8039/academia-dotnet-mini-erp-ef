@@ -2,8 +2,8 @@
 using iText.Kernel.Pdf;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using MiniERP.EF.App.Services;
 using iText.Layout;
+using MiniERP.EF.App.Services.Implementations;
 
 namespace MiniERP.EF.App.Views
 {
