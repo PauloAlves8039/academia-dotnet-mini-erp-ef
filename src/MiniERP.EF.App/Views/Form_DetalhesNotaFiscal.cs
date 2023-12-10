@@ -29,7 +29,7 @@ namespace MiniERP.EF.App.Views
         {
             try
             {
-                var notaFiscalViewModel = await _notaFiscalService.ObterNotaFiscalViewModelPorId(_codigoNotaFiscal);
+                var notaFiscalViewModel = await _notaFiscalService.ObterNotaFiscalViewModelPorCodigo(_codigoNotaFiscal);
 
                 if (notaFiscalViewModel != null)
                 {
