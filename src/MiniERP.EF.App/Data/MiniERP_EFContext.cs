@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiniERP.EF.App.Models;
+using MiniERP.EF.App.Models.Account;
 
 namespace MiniERP.EF.App.Data
 {
@@ -15,15 +16,52 @@ namespace MiniERP.EF.App.Data
         public virtual DbSet<NotaFiscal> NotaFiscals { get; set; }
         public virtual DbSet<Produto> Produtos { get; set; }
 
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=MiniERP_EF;Persist Security Info=True;User ID=sa;Password=*********");
+                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=MiniERP_EF_WF;Persist Security Info=True;User ID=sa;Password=*********");
+                optionsBuilder.UseLazyLoadingProxies();
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            ConfigureUsuarios(modelBuilder);
+            ConfigureClientes(modelBuilder);
+            ConfigureFornecedores(modelBuilder);
+            ConfigureItemNotaFiscal(modelBuilder);
+            ConfigureNotaFiscal(modelBuilder);
+            ConfigureProdutos(modelBuilder);
+
+            OnModelCreatingPartial(modelBuilder);
+        }
+
+        private void ConfigureUsuarios(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Usuario>().HasData(
+                new Usuario
+                {
+                    Id = 1,
+                    NomeUsuario = "Administrador",
+                    Senha = "Abc@123456"
+                });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.NomeUsuario)
+                    .IsRequired()
+                    .HasMaxLength(64);
+                entity.Property(e => e.Senha)
+                    .IsRequired()
+                    .HasMaxLength(64);
+            });
+        }
+
+        private void ConfigureClientes(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cliente>(entity =>
             {
@@ -58,7 +96,10 @@ namespace MiniERP.EF.App.Data
                     .HasMaxLength(15)
                     .IsUnicode(false);
             });
+        }
 
+        private void ConfigureFornecedores(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<Fornecedor>(entity =>
             {
                 entity.HasKey(e => e.CodigoFornecedor)
@@ -92,7 +133,11 @@ namespace MiniERP.EF.App.Data
                     .HasMaxLength(20)
                     .IsUnicode(false);
             });
+        }
 
+
+        private void ConfigureItemNotaFiscal(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<ItemNotaFiscal>(entity =>
             {
                 entity.HasKey(e => e.CodigoItemNotaFiscal)
@@ -112,7 +157,11 @@ namespace MiniERP.EF.App.Data
                     .HasForeignKey(d => d.ProdutoId)
                     .HasConstraintName("FK__ItemNotaF__Produ__412EB0B6");
             });
+        }
 
+
+        private void ConfigureNotaFiscal(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<NotaFiscal>(entity =>
             {
                 entity.HasKey(e => e.CodigoNotaFiscal)
@@ -129,7 +178,10 @@ namespace MiniERP.EF.App.Data
                     .HasForeignKey(d => d.ClienteId)
                     .HasConstraintName("FK__NotaFisca__Clien__3D5E1FD2");
             });
+        }
 
+        private void ConfigureProdutos(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<Produto>(entity =>
             {
                 entity.HasKey(e => e.CodigoProduto)
@@ -151,8 +203,6 @@ namespace MiniERP.EF.App.Data
                     .HasForeignKey(d => d.FornecedorId)
                     .HasConstraintName("FK__Produto__Fornece__3A81B327");
             });
-
-            OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
