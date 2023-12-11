@@ -1,5 +1,6 @@
 ﻿using MiniERP.EF.App.Data;
 using MiniERP.EF.App.Models.Account;
+using MiniERP.EF.App.Utils;
 
 namespace MiniERP.EF.App.Views
 {
@@ -31,10 +32,15 @@ namespace MiniERP.EF.App.Views
             txb_Senha_Adicionada.Text = string.Empty;
         }
 
-        private void ExecutarCadastro() 
+        private void ExecutarCadastro()
         {
             var nomeUsuario = txb_Usuario_Adcionado.Text;
             var senha = txb_Senha_Adicionada.Text;
+
+            if (!Utilitario.ValidarOsCamposDoUsuario(nomeUsuario, senha))
+            {
+                return;
+            }
 
             using (var context = new MiniERP_EFContext())
             {

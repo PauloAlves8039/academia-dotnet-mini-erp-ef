@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace MiniERP.EF.App.Utils
 {
@@ -62,5 +63,15 @@ namespace MiniERP.EF.App.Utils
             string numerosDoCnpj = new string(cnpj.Where(char.IsDigit).ToArray());
             return numerosDoCnpj.Length >= 14;
         }
+        public static bool ValidarOsCamposDoUsuario(string nome, string senha)
+        {
+            if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(senha))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos.");
+                return false;
+            }
+            return true;
+        }
+
     }
 }

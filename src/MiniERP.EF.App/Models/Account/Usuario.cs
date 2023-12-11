@@ -9,11 +9,11 @@ namespace MiniERP.EF.App.Models.Account
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo Nome de Usuário é obrigatório.")]
         [MaxLength(64)]
         public string NomeUsuario { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo Senha é obrigatório.")]
         [MaxLength(64)]
         public string Senha { get; set; }
 

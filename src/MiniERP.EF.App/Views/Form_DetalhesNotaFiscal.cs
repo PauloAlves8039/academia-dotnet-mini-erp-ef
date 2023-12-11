@@ -172,6 +172,7 @@ namespace MiniERP.EF.App.Views
             tabela.AddCell(new Cell(1, 2).Add(new Paragraph("Dados do Produto")).SetBold().SetTextAlignment(TextAlignment.CENTER));
 
             AdicionarLinhaNaTabela(tabela, "Código do Produto", lbl_Codigo_Produto.Text);
+            AdicionarLinhaNaTabela(tabela, "Emissão", lbl_DataEmissao_NotaFiscal.Text);
             AdicionarLinhaNaTabela(tabela, "Produto", lbl_Nome_Produto.Text);
             AdicionarLinhaNaTabela(tabela, "Descrição", lbl_Descricao_Produto.Text);
             AdicionarLinhaNaTabela(tabela, "Quantidade", lbl_Quantidade_Produto.Text);

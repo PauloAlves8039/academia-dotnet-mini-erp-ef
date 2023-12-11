@@ -1,4 +1,5 @@
 ﻿using MiniERP.EF.App.Data;
+using MiniERP.EF.App.Utils;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -37,6 +38,8 @@ namespace MiniERP.EF.App.Views
         {
             var username = txb_Usuario_Login.Text;
             var password = txb_Senha_login.Text;
+
+            Utilitario.ValidarOsCamposDoUsuario(username, password);
 
             using (var context = new MiniERP_EFContext())
             {

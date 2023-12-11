@@ -168,7 +168,7 @@
             MaximizeBox = false;
             Name = "Form_Usuario";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastrar Usuário";
+            Text = "Cadastrar Usuário(a)";
             ((System.ComponentModel.ISupportInitialize)pictureBox_Login).EndInit();
             toolStrip_Usuario.ResumeLayout(false);
             toolStrip_Usuario.PerformLayout();
