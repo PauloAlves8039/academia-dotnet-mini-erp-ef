@@ -143,7 +143,7 @@
             // lbl_ValorTotal_NotaFiscal
             // 
             lbl_ValorTotal_NotaFiscal.AutoSize = true;
-            lbl_ValorTotal_NotaFiscal.Location = new Point(63, 32);
+            lbl_ValorTotal_NotaFiscal.Location = new Point(72, 32);
             lbl_ValorTotal_NotaFiscal.Name = "lbl_ValorTotal_NotaFiscal";
             lbl_ValorTotal_NotaFiscal.Size = new Size(34, 15);
             lbl_ValorTotal_NotaFiscal.TabIndex = 1;
@@ -153,7 +153,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(14, 32);
+            label13.Location = new Point(23, 32);
             label13.Name = "label13";
             label13.Size = new Size(37, 15);
             label13.TabIndex = 0;
@@ -316,7 +316,7 @@
             // lbl_Endereco_Cliente
             // 
             lbl_Endereco_Cliente.AutoSize = true;
-            lbl_Endereco_Cliente.Location = new Point(89, 190);
+            lbl_Endereco_Cliente.Location = new Point(92, 193);
             lbl_Endereco_Cliente.Name = "lbl_Endereco_Cliente";
             lbl_Endereco_Cliente.Size = new Size(34, 15);
             lbl_Endereco_Cliente.TabIndex = 13;
@@ -392,7 +392,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(20, 190);
+            label8.Location = new Point(23, 193);
             label8.Name = "label8";
             label8.Size = new Size(62, 15);
             label8.TabIndex = 8;

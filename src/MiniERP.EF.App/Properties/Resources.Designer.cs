@@ -63,6 +63,16 @@ namespace MiniERP.EF.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap abrir_nota {
+            get {
+                object obj = ResourceManager.GetObject("abrir-nota", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add2 {
             get {
                 object obj = ResourceManager.GetObject("add2", resourceCulture);
@@ -103,9 +113,9 @@ namespace MiniERP.EF.App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap confirmar {
+        internal static System.Drawing.Bitmap confirmacao2 {
             get {
-                object obj = ResourceManager.GetObject("confirmar", resourceCulture);
+                object obj = ResourceManager.GetObject("confirmacao2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +156,16 @@ namespace MiniERP.EF.App.Properties {
         internal static System.Drawing.Bitmap fornecedor {
             get {
                 object obj = ResourceManager.GetObject("fornecedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gerar_nota {
+            get {
+                object obj = ResourceManager.GetObject("gerar-nota", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

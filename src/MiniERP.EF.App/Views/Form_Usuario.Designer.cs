@@ -116,7 +116,7 @@
             // 
             Btn_Cadastrar_Usuario.AutoSize = false;
             Btn_Cadastrar_Usuario.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Cadastrar_Usuario.Image = Properties.Resources.add2;
+            Btn_Cadastrar_Usuario.Image = Properties.Resources.confirmacao2;
             Btn_Cadastrar_Usuario.ImageTransparentColor = Color.Magenta;
             Btn_Cadastrar_Usuario.Name = "Btn_Cadastrar_Usuario";
             Btn_Cadastrar_Usuario.Size = new Size(36, 36);

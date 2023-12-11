@@ -52,10 +52,10 @@
             Btn_Pesquisar_NotaFiscal = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             Btn_Limpar_Campo_NotaFiscal = new ToolStripButton();
-            Btn_Abrir_NotaFiscal = new ToolStripButton();
-            dataGridView_NotaFiscal = new DataGridView();
             Btn_Info_NotasFiscais = new ToolStripButton();
             toolStripSeparator4 = new ToolStripSeparator();
+            Btn_Abrir_NotaFiscal = new ToolStripButton();
+            dataGridView_NotaFiscal = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ToolStrip_NotaFiscal.SuspendLayout();
             groupBox_Formulario_Produto.SuspendLayout();
@@ -196,7 +196,7 @@
             // 
             Btn_Salvar_NotaFiscal.AutoSize = false;
             Btn_Salvar_NotaFiscal.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Salvar_NotaFiscal.Image = Properties.Resources.disk_blue;
+            Btn_Salvar_NotaFiscal.Image = Properties.Resources.gerar_nota;
             Btn_Salvar_NotaFiscal.ImageTransparentColor = Color.Magenta;
             Btn_Salvar_NotaFiscal.Name = "Btn_Salvar_NotaFiscal";
             Btn_Salvar_NotaFiscal.Size = new Size(36, 36);
@@ -293,11 +293,28 @@
             Btn_Limpar_Campo_NotaFiscal.Text = "Limpar Campo";
             Btn_Limpar_Campo_NotaFiscal.Click += Btn_Limpar_Campo_NotaFiscal_Click;
             // 
+            // Btn_Info_NotasFiscais
+            // 
+            Btn_Info_NotasFiscais.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_NotasFiscais.AutoSize = false;
+            Btn_Info_NotasFiscais.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_NotasFiscais.Image = Properties.Resources.info;
+            Btn_Info_NotasFiscais.ImageTransparentColor = Color.Magenta;
+            Btn_Info_NotasFiscais.Name = "Btn_Info_NotasFiscais";
+            Btn_Info_NotasFiscais.Size = new Size(36, 36);
+            Btn_Info_NotasFiscais.Text = "Informações";
+            Btn_Info_NotasFiscais.Click += Btn_Info_NotasFiscais_Click;
+            // 
+            // toolStripSeparator4
+            // 
+            toolStripSeparator4.Name = "toolStripSeparator4";
+            toolStripSeparator4.Size = new Size(6, 39);
+            // 
             // Btn_Abrir_NotaFiscal
             // 
             Btn_Abrir_NotaFiscal.AutoSize = false;
             Btn_Abrir_NotaFiscal.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Abrir_NotaFiscal.Image = Properties.Resources.nota_fiscal;
+            Btn_Abrir_NotaFiscal.Image = Properties.Resources.abrir_nota;
             Btn_Abrir_NotaFiscal.ImageTransparentColor = Color.Magenta;
             Btn_Abrir_NotaFiscal.Name = "Btn_Abrir_NotaFiscal";
             Btn_Abrir_NotaFiscal.Size = new Size(36, 36);
@@ -317,23 +334,6 @@
             dataGridView_NotaFiscal.Size = new Size(950, 250);
             dataGridView_NotaFiscal.TabIndex = 18;
             dataGridView_NotaFiscal.CellDoubleClick += dataGridView_NotaFiscal_CellDoubleClick;
-            // 
-            // Btn_Info_NotasFiscais
-            // 
-            Btn_Info_NotasFiscais.Alignment = ToolStripItemAlignment.Right;
-            Btn_Info_NotasFiscais.AutoSize = false;
-            Btn_Info_NotasFiscais.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Info_NotasFiscais.Image = Properties.Resources.info;
-            Btn_Info_NotasFiscais.ImageTransparentColor = Color.Magenta;
-            Btn_Info_NotasFiscais.Name = "Btn_Info_NotasFiscais";
-            Btn_Info_NotasFiscais.Size = new Size(36, 36);
-            Btn_Info_NotasFiscais.Text = "Informações";
-            Btn_Info_NotasFiscais.Click += Btn_Info_NotasFiscais_Click;
-            // 
-            // toolStripSeparator4
-            // 
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(6, 39);
             // 
             // Form_NotaFiscal
             // 

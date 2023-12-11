@@ -83,7 +83,7 @@
             // 
             Btn_Login.AutoSize = false;
             Btn_Login.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Login.Image = Properties.Resources.confirmar;
+            Btn_Login.Image = Properties.Resources.confirmacao2;
             Btn_Login.ImageTransparentColor = Color.Magenta;
             Btn_Login.Name = "Btn_Login";
             Btn_Login.Size = new Size(36, 36);
@@ -127,7 +127,7 @@
             // 
             Btn_Cadastrar_Usuario.AutoSize = false;
             Btn_Cadastrar_Usuario.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Cadastrar_Usuario.Image = Properties.Resources.add2;
+            Btn_Cadastrar_Usuario.Image = Properties.Resources.usuaria;
             Btn_Cadastrar_Usuario.ImageTransparentColor = Color.Magenta;
             Btn_Cadastrar_Usuario.Name = "Btn_Cadastrar_Usuario";
             Btn_Cadastrar_Usuario.Size = new Size(36, 36);
@@ -188,7 +188,6 @@
             Name = "Form_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            // FormClosed += Form_Login_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox_Login).EndInit();
             toolStrip_Login.ResumeLayout(false);
             toolStrip_Login.PerformLayout();
