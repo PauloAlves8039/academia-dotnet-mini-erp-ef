@@ -69,7 +69,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.nota_fiscal;
-            pictureBox1.Location = new Point(581, 2);
+            pictureBox1.Location = new Point(532, 9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -81,11 +81,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(330, 9);
+            label7.Location = new Point(376, 19);
             label7.Name = "label7";
-            label7.Size = new Size(245, 30);
+            label7.Size = new Size(150, 30);
             label7.TabIndex = 22;
-            label7.Text = "Formulário Nota Fiscal";
+            label7.Text = "Notas Fiscais";
             // 
             // ToolStrip_NotaFiscal
             // 

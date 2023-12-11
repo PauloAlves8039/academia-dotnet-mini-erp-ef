@@ -464,11 +464,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = Color.DodgerBlue;
-            label1.Location = new Point(285, 20);
+            label1.Location = new Point(193, 19);
             label1.Name = "label1";
-            label1.Size = new Size(130, 29);
+            label1.Size = new Size(261, 29);
             label1.TabIndex = 15;
-            label1.Text = "Nota Fiscal";
+            label1.Text = "Detalhes da Nota Fiscal";
             // 
             // printDocument1
             // 
@@ -488,7 +488,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.nota_fiscal;
-            pictureBox1.Location = new Point(421, 9);
+            pictureBox1.Location = new Point(460, 8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

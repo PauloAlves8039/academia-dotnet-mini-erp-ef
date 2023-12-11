@@ -57,8 +57,8 @@
             Btn_Pesquisar_Fornecedor = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             Btn_Limpar_Campo_Fornecedor = new ToolStripButton();
-            dataGridView_Fornecedor = new DataGridView();
             Btn_Info_Fornecedor = new ToolStripButton();
+            dataGridView_Fornecedor = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ToolStrip_Fornecedor.SuspendLayout();
             groupBox_Formulario_Fornecedor.SuspendLayout();
@@ -71,7 +71,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.fornecedor;
-            pictureBox1.Location = new Point(483, 5);
+            pictureBox1.Location = new Point(524, -1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -83,11 +83,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(351, 15);
+            label7.Location = new Point(370, 9);
             label7.Name = "label7";
-            label7.Size = new Size(126, 30);
+            label7.Size = new Size(148, 30);
             label7.TabIndex = 10;
-            label7.Text = "Fornecedor";
+            label7.Text = "Fornecedores";
             // 
             // ToolStrip_Fornecedor
             // 
@@ -207,7 +207,7 @@
             // 
             txb_Email_Fornecedor.Location = new Point(113, 171);
             txb_Email_Fornecedor.Name = "txb_Email_Fornecedor";
-            txb_Email_Fornecedor.Size = new Size(200, 23);
+            txb_Email_Fornecedor.Size = new Size(250, 23);
             txb_Email_Fornecedor.TabIndex = 8;
             // 
             // mktb_Telefone_Fornecedor
@@ -222,7 +222,7 @@
             // 
             txb_RazaoSocial_Fornecedor.Location = new Point(113, 34);
             txb_RazaoSocial_Fornecedor.Name = "txb_RazaoSocial_Fornecedor";
-            txb_RazaoSocial_Fornecedor.Size = new Size(200, 23);
+            txb_RazaoSocial_Fornecedor.Size = new Size(250, 23);
             txb_RazaoSocial_Fornecedor.TabIndex = 5;
             // 
             // label6
@@ -343,6 +343,18 @@
             Btn_Limpar_Campo_Fornecedor.Text = "Limpar Campo";
             Btn_Limpar_Campo_Fornecedor.Click += Btn_Limpar_Campo_Fornecedor_Click;
             // 
+            // Btn_Info_Fornecedor
+            // 
+            Btn_Info_Fornecedor.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_Fornecedor.AutoSize = false;
+            Btn_Info_Fornecedor.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_Fornecedor.Image = Properties.Resources.info;
+            Btn_Info_Fornecedor.ImageTransparentColor = Color.Magenta;
+            Btn_Info_Fornecedor.Name = "Btn_Info_Fornecedor";
+            Btn_Info_Fornecedor.Size = new Size(36, 36);
+            Btn_Info_Fornecedor.Text = "Informações";
+            Btn_Info_Fornecedor.Click += Btn_Info_Fornecedor_Click;
+            // 
             // dataGridView_Fornecedor
             // 
             dataGridView_Fornecedor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -355,18 +367,6 @@
             dataGridView_Fornecedor.Size = new Size(950, 160);
             dataGridView_Fornecedor.TabIndex = 6;
             dataGridView_Fornecedor.CellDoubleClick += dataGridView_Fornecedor_CellDoubleClick;
-            // 
-            // Btn_Info_Fornecedor
-            // 
-            Btn_Info_Fornecedor.Alignment = ToolStripItemAlignment.Right;
-            Btn_Info_Fornecedor.AutoSize = false;
-            Btn_Info_Fornecedor.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Info_Fornecedor.Image = Properties.Resources.info;
-            Btn_Info_Fornecedor.ImageTransparentColor = Color.Magenta;
-            Btn_Info_Fornecedor.Name = "Btn_Info_Fornecedor";
-            Btn_Info_Fornecedor.Size = new Size(36, 36);
-            Btn_Info_Fornecedor.Text = "Informações";
-            Btn_Info_Fornecedor.Click += Btn_Info_Fornecedor_Click;
             // 
             // Form_Fornecedor
             // 

@@ -84,11 +84,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(396, 9);
+            label7.Location = new Point(391, 14);
             label7.Name = "label7";
-            label7.Size = new Size(89, 30);
+            label7.Size = new Size(99, 30);
             label7.TabIndex = 16;
-            label7.Text = "Produto";
+            label7.Text = "Produtos";
             // 
             // ToolStrip_Produto
             // 
@@ -242,7 +242,7 @@
             // 
             txb_Nome_Produto.Location = new Point(113, 34);
             txb_Nome_Produto.Name = "txb_Nome_Produto";
-            txb_Nome_Produto.Size = new Size(200, 23);
+            txb_Nome_Produto.Size = new Size(250, 23);
             txb_Nome_Produto.TabIndex = 5;
             // 
             // label6

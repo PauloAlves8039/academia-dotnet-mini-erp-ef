@@ -37,6 +37,7 @@
             Btn_Pesquisar_Cliente = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             Btn_Limpar_Campo_Cliente = new ToolStripButton();
+            Btn_Info_Produto = new ToolStripButton();
             groupBox_Formulario_Cliente = new GroupBox();
             ToolStrip_Formulario_Cliente = new ToolStrip();
             Btn_Salvar_Cliente = new ToolStripButton();
@@ -58,7 +59,6 @@
             Btn_Sair_Cliente = new ToolStripButton();
             label7 = new Label();
             pictureBox1 = new PictureBox();
-            Btn_Info_Produto = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Cliente).BeginInit();
             groupBox_Pesquisar_Cliente.SuspendLayout();
             ToolStrip_Pesquisar_Cliente.SuspendLayout();
@@ -150,6 +150,18 @@
             Btn_Limpar_Campo_Cliente.Text = "Limpar Campo";
             Btn_Limpar_Campo_Cliente.Click += Btn_Limpar_Campo_Cliente_Click;
             // 
+            // Btn_Info_Produto
+            // 
+            Btn_Info_Produto.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_Produto.AutoSize = false;
+            Btn_Info_Produto.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_Produto.Image = Properties.Resources.info;
+            Btn_Info_Produto.ImageTransparentColor = Color.Magenta;
+            Btn_Info_Produto.Name = "Btn_Info_Produto";
+            Btn_Info_Produto.Size = new Size(36, 36);
+            Btn_Info_Produto.Text = "Informações";
+            Btn_Info_Produto.Click += Btn_Info_Produto_Click;
+            // 
             // groupBox_Formulario_Cliente
             // 
             groupBox_Formulario_Cliente.Controls.Add(ToolStrip_Formulario_Cliente);
@@ -236,7 +248,7 @@
             // 
             txb_Email_Cliente.Location = new Point(113, 165);
             txb_Email_Cliente.Name = "txb_Email_Cliente";
-            txb_Email_Cliente.Size = new Size(200, 23);
+            txb_Email_Cliente.Size = new Size(250, 23);
             txb_Email_Cliente.TabIndex = 8;
             // 
             // mktb_Telefone_Cliente
@@ -259,7 +271,7 @@
             // 
             txb_Nome_Cliente.Location = new Point(113, 34);
             txb_Nome_Cliente.Name = "txb_Nome_Cliente";
-            txb_Nome_Cliente.Size = new Size(200, 23);
+            txb_Nome_Cliente.Size = new Size(250, 23);
             txb_Nome_Cliente.TabIndex = 5;
             // 
             // label6
@@ -341,11 +353,11 @@
             label7.AutoSize = true;
             label7.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(367, 23);
+            label7.Location = new Point(357, 22);
             label7.Name = "label7";
-            label7.Size = new Size(83, 30);
+            label7.Size = new Size(93, 30);
             label7.TabIndex = 4;
-            label7.Text = "Cliente";
+            label7.Text = "Clientes";
             // 
             // pictureBox1
             // 
@@ -356,18 +368,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            // 
-            // Btn_Info_Produto
-            // 
-            Btn_Info_Produto.Alignment = ToolStripItemAlignment.Right;
-            Btn_Info_Produto.AutoSize = false;
-            Btn_Info_Produto.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Info_Produto.Image = Properties.Resources.info;
-            Btn_Info_Produto.ImageTransparentColor = Color.Magenta;
-            Btn_Info_Produto.Name = "Btn_Info_Produto";
-            Btn_Info_Produto.Size = new Size(36, 36);
-            Btn_Info_Produto.Text = "Informações";
-            Btn_Info_Produto.Click += Btn_Info_Produto_Click;
             // 
             // Form_Cliente
             // 
