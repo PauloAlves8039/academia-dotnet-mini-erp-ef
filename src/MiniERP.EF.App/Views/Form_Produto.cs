@@ -1,7 +1,7 @@
 ﻿using MiniERP.EF.App.Models;
 using MiniERP.EF.App.Services.Implementations;
+using MiniERP.EF.App.Utils;
 using MiniERP.EF.App.ViewModels;
-using System;
 
 namespace MiniERP.EF.App.Views
 {
@@ -291,7 +291,13 @@ namespace MiniERP.EF.App.Views
 
                 foreach (Fornecedor fornecedor in fornecedores)
                 {
-                    cbx_Fornecedor.Items.Add(fornecedor.CodigoFornecedor);
+                    ComboBoxElement item = new ComboBoxElement
+                    {
+                        Value = fornecedor.CodigoFornecedor,
+                        Text = fornecedor.RazaoSocial
+                    };
+
+                    cbx_Fornecedor.Items.Add(item);
                 }
             }
             catch (Exception exception)
@@ -313,9 +319,9 @@ namespace MiniERP.EF.App.Views
             {
                 var selectedValue = cbx_Fornecedor.SelectedItem;
 
-                if (selectedValue != null && selectedValue is int)
+                if (selectedValue != null && selectedValue is ComboBoxElement)
                 {
-                    codigoFornecedor = (int)selectedValue;
+                    codigoFornecedor = ((ComboBoxElement)selectedValue).Value;
                     return true;
                 }
                 else

@@ -149,7 +149,7 @@
             cbx_Produto_NotaFiscal.FormattingEnabled = true;
             cbx_Produto_NotaFiscal.Location = new Point(106, 78);
             cbx_Produto_NotaFiscal.Name = "cbx_Produto_NotaFiscal";
-            cbx_Produto_NotaFiscal.Size = new Size(120, 23);
+            cbx_Produto_NotaFiscal.Size = new Size(250, 23);
             cbx_Produto_NotaFiscal.TabIndex = 15;
             // 
             // label2
@@ -167,7 +167,7 @@
             cbx_Cliente_NotaFiscal.FormattingEnabled = true;
             cbx_Cliente_NotaFiscal.Location = new Point(106, 34);
             cbx_Cliente_NotaFiscal.Name = "cbx_Cliente_NotaFiscal";
-            cbx_Cliente_NotaFiscal.Size = new Size(120, 23);
+            cbx_Cliente_NotaFiscal.Size = new Size(250, 23);
             cbx_Cliente_NotaFiscal.TabIndex = 13;
             // 
             // label3

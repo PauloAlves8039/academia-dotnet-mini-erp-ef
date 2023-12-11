@@ -39,7 +39,7 @@ namespace MiniERP.EF.App.Utils
 
             if (!Regex.IsMatch(emailInformado, formatoDoEmail))
             {
-                MessageBox.Show("O formato do email não é válido. Por favor, insira um email válido.", "Aviso");
+                MessageBox.Show("O formato do email não é válido. Por favor, insira um email válido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -67,7 +67,7 @@ namespace MiniERP.EF.App.Utils
         {
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(senha))
             {
-                MessageBox.Show("Por favor, preencha todos os campos.");
+                MessageBox.Show("Por favor, preencha todos os campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

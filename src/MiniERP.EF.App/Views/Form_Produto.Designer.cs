@@ -57,8 +57,8 @@
             Btn_Pesquisar_Produto = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             Btn_Limpar_Campo_Produto = new ToolStripButton();
-            dataGridView_Produto = new DataGridView();
             Btn_Info_Produto = new ToolStripButton();
+            dataGridView_Produto = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ToolStrip_Produto.SuspendLayout();
             groupBox_Formulario_Produto.SuspendLayout();
@@ -156,7 +156,7 @@
             cbx_Fornecedor.FormattingEnabled = true;
             cbx_Fornecedor.Location = new Point(111, 212);
             cbx_Fornecedor.Name = "cbx_Fornecedor";
-            cbx_Fornecedor.Size = new Size(120, 23);
+            cbx_Fornecedor.Size = new Size(250, 23);
             cbx_Fornecedor.TabIndex = 13;
             // 
             // label3
@@ -344,6 +344,18 @@
             Btn_Limpar_Campo_Produto.Text = "Limpar Campo";
             Btn_Limpar_Campo_Produto.Click += Btn_Limpar_Campo_Produto_Click;
             // 
+            // Btn_Info_Produto
+            // 
+            Btn_Info_Produto.Alignment = ToolStripItemAlignment.Right;
+            Btn_Info_Produto.AutoSize = false;
+            Btn_Info_Produto.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            Btn_Info_Produto.Image = Properties.Resources.info;
+            Btn_Info_Produto.ImageTransparentColor = Color.Magenta;
+            Btn_Info_Produto.Name = "Btn_Info_Produto";
+            Btn_Info_Produto.Size = new Size(36, 36);
+            Btn_Info_Produto.Text = "Informações";
+            Btn_Info_Produto.Click += Btn_Info_Produto_Click;
+            // 
             // dataGridView_Produto
             // 
             dataGridView_Produto.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -356,18 +368,6 @@
             dataGridView_Produto.Size = new Size(950, 160);
             dataGridView_Produto.TabIndex = 12;
             dataGridView_Produto.CellDoubleClick += dataGridView_Produto_CellDoubleClick;
-            // 
-            // Btn_Info_Produto
-            // 
-            Btn_Info_Produto.Alignment = ToolStripItemAlignment.Right;
-            Btn_Info_Produto.AutoSize = false;
-            Btn_Info_Produto.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            Btn_Info_Produto.Image = Properties.Resources.info;
-            Btn_Info_Produto.ImageTransparentColor = Color.Magenta;
-            Btn_Info_Produto.Name = "Btn_Info_Produto";
-            Btn_Info_Produto.Size = new Size(36, 36);
-            Btn_Info_Produto.Text = "Informações";
-            Btn_Info_Produto.Click += Btn_Info_Produto_Click;
             // 
             // Form_Produto
             // 

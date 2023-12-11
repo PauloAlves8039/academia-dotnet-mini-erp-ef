@@ -47,7 +47,7 @@ namespace MiniERP.EF.App.Views
 
                 if (usuario != null && VerificarSenha(password, usuario.Senha))
                 {
-                    MessageBox.Show("Login bem-sucedido!");
+                    MessageBox.Show("Login bem-sucedido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Close();
 
@@ -57,7 +57,7 @@ namespace MiniERP.EF.App.Views
                 }
                 else
                 {
-                    MessageBox.Show("Falha no login. Verifique suas credenciais.");
+                    MessageBox.Show("Falha no login. Verifique suas credenciais.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

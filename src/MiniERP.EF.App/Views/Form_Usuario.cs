@@ -55,7 +55,7 @@ namespace MiniERP.EF.App.Views
                 context.SaveChanges();
             }
 
-            MessageBox.Show("Usuário(a) cadastrado(a) com sucesso!");
+            MessageBox.Show("Usuário(a) cadastrado(a) com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimparCamposCadastroUsuario();
         }
     }

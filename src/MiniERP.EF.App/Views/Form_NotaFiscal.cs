@@ -1,5 +1,6 @@
 ﻿using MiniERP.EF.App.Models;
 using MiniERP.EF.App.Services.Implementations;
+using MiniERP.EF.App.Utils;
 using MiniERP.EF.App.ViewModels;
 
 namespace MiniERP.EF.App.Views
@@ -25,11 +26,12 @@ namespace MiniERP.EF.App.Views
                 return;
             }
 
-            int codigoCliente = (int)cbx_Cliente_NotaFiscal.SelectedItem;
+            int codigoCliente = ((ComboBoxElement)cbx_Cliente_NotaFiscal.SelectedItem).Value;
+            int codigoProduto = ((ComboBoxElement)cbx_Produto_NotaFiscal.SelectedItem).Value;
+
             NotaFiscal novaNotaFiscal = CriarNovaNotaFiscal(codigoCliente);
 
-            if (!int.TryParse(cbx_Produto_NotaFiscal.SelectedItem?.ToString(), out int codigoProduto) ||
-                !int.TryParse(nud_Quantidade_NotaFiscal.Text, out int quantidade))
+            if (!int.TryParse(nud_Quantidade_NotaFiscal.Text, out int quantidade))
             {
                 MessageBox.Show("Por favor, preencha os campos corretamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -261,7 +263,7 @@ namespace MiniERP.EF.App.Views
 
                 foreach (Cliente cliente in clientes)
                 {
-                    cbx_Cliente_NotaFiscal.Items.Add(cliente.CodigoCliente);
+                    cbx_Cliente_NotaFiscal.Items.Add(new ComboBoxElement { Value = cliente.CodigoCliente, Text = cliente.Nome });
                 }
             }
             catch (Exception exception)
@@ -280,7 +282,7 @@ namespace MiniERP.EF.App.Views
 
                 foreach (ProdutoViewModel produto in produtos)
                 {
-                    cbx_Produto_NotaFiscal.Items.Add(produto.CodigoProduto);
+                    cbx_Produto_NotaFiscal.Items.Add(new ComboBoxElement { Value = produto.CodigoProduto, Text = produto.Nome });
                 }
             }
             catch (Exception exception)
