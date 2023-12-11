@@ -188,6 +188,7 @@
             Name = "Form_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            FormClosing += Form_Login_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBox_Login).EndInit();
             toolStrip_Login.ResumeLayout(false);
             toolStrip_Login.PerformLayout();

@@ -34,10 +34,10 @@
             menuStrip1 = new MenuStrip();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             ConsultarCliente = new ToolStripMenuItem();
-            produtoToolStripMenuItem = new ToolStripMenuItem();
-            ConsultarProduto = new ToolStripMenuItem();
             fornecedorToolStripMenuItem = new ToolStripMenuItem();
             ConsultarFornecedor = new ToolStripMenuItem();
+            produtoToolStripMenuItem = new ToolStripMenuItem();
+            ConsultarProduto = new ToolStripMenuItem();
             notaFiscalToolStripMenuItem = new ToolStripMenuItem();
             ConsultarNotaFiscal = new ToolStripMenuItem();
             SobreToolStripMenuItem = new ToolStripMenuItem();
@@ -82,7 +82,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.Gainsboro;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, produtoToolStripMenuItem, fornecedorToolStripMenuItem, notaFiscalToolStripMenuItem, SobreToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, fornecedorToolStripMenuItem, produtoToolStripMenuItem, notaFiscalToolStripMenuItem, SobreToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(784, 25);
@@ -104,21 +104,6 @@
             ConsultarCliente.Text = "Consultar";
             ConsultarCliente.Click += ConsultarCliente_Click;
             // 
-            // produtoToolStripMenuItem
-            // 
-            produtoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ConsultarProduto });
-            produtoToolStripMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            produtoToolStripMenuItem.Size = new Size(70, 21);
-            produtoToolStripMenuItem.Text = "Produto";
-            // 
-            // ConsultarProduto
-            // 
-            ConsultarProduto.Name = "ConsultarProduto";
-            ConsultarProduto.Size = new Size(135, 22);
-            ConsultarProduto.Text = "Consultar";
-            ConsultarProduto.Click += ConsultarProduto_Click;
-            // 
             // fornecedorToolStripMenuItem
             // 
             fornecedorToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ConsultarFornecedor });
@@ -133,6 +118,21 @@
             ConsultarFornecedor.Size = new Size(135, 22);
             ConsultarFornecedor.Text = "Consultar";
             ConsultarFornecedor.Click += ConsultarFornecedor_Click;
+            // 
+            // produtoToolStripMenuItem
+            // 
+            produtoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ConsultarProduto });
+            produtoToolStripMenuItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
+            produtoToolStripMenuItem.Size = new Size(70, 21);
+            produtoToolStripMenuItem.Text = "Produto";
+            // 
+            // ConsultarProduto
+            // 
+            ConsultarProduto.Name = "ConsultarProduto";
+            ConsultarProduto.Size = new Size(135, 22);
+            ConsultarProduto.Text = "Consultar";
+            ConsultarProduto.Click += ConsultarProduto_Click;
             // 
             // notaFiscalToolStripMenuItem
             // 
@@ -160,14 +160,14 @@
             // AbrirFormSobre
             // 
             AbrirFormSobre.Name = "AbrirFormSobre";
-            AbrirFormSobre.Size = new Size(180, 22);
+            AbrirFormSobre.Size = new Size(152, 22);
             AbrirFormSobre.Text = "Projeto";
             AbrirFormSobre.Click += AbrirFormSobre_Click;
             // 
             // ConsultarInformacoes
             // 
             ConsultarInformacoes.Name = "ConsultarInformacoes";
-            ConsultarInformacoes.Size = new Size(180, 22);
+            ConsultarInformacoes.Size = new Size(152, 22);
             ConsultarInformacoes.Text = "Informações";
             ConsultarInformacoes.Click += ConsultarInformacoes_Click;
             // 
@@ -185,8 +185,8 @@
             // 
             toolStripStatusLabel_Msg.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel_Msg.Name = "toolStripStatusLabel_Msg";
-            toolStripStatusLabel_Msg.Size = new Size(86, 19);
-            toolStripStatusLabel_Msg.Text = "Bem-vindo(a) ";
+            toolStripStatusLabel_Msg.Size = new Size(83, 19);
+            toolStripStatusLabel_Msg.Text = "Bem-vindo(a)";
             // 
             // toolStripStatusLabel_Usuario
             // 
@@ -200,8 +200,8 @@
             // 
             toolStripStatusLabel_MsgData.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel_MsgData.Name = "toolStripStatusLabel_MsgData";
-            toolStripStatusLabel_MsgData.Size = new Size(36, 19);
-            toolStripStatusLabel_MsgData.Text = "Data ";
+            toolStripStatusLabel_MsgData.Size = new Size(33, 19);
+            toolStripStatusLabel_MsgData.Text = "Data";
             // 
             // toolStripStatusLabel_Data
             // 
@@ -215,8 +215,8 @@
             // 
             toolStripStatusLabel_MsgHora.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel_MsgHora.Name = "toolStripStatusLabel_MsgHora";
-            toolStripStatusLabel_MsgHora.Size = new Size(37, 19);
-            toolStripStatusLabel_MsgHora.Text = "Hora ";
+            toolStripStatusLabel_MsgHora.Size = new Size(34, 19);
+            toolStripStatusLabel_MsgHora.Text = "Hora";
             // 
             // toolStripStatusLabel_Hora
             // 
@@ -250,7 +250,7 @@
             // panel_Fornedor
             // 
             panel_Fornedor.Controls.Add(PictureBox_Fornecedor);
-            panel_Fornedor.Location = new Point(395, 131);
+            panel_Fornedor.Location = new Point(286, 131);
             panel_Fornedor.Name = "panel_Fornedor";
             panel_Fornedor.Size = new Size(80, 80);
             panel_Fornedor.TabIndex = 4;
@@ -271,7 +271,7 @@
             // panel_Produto
             // 
             panel_Produto.Controls.Add(PictureBox_Produto);
-            panel_Produto.Location = new Point(286, 131);
+            panel_Produto.Location = new Point(395, 131);
             panel_Produto.Name = "panel_Produto";
             panel_Produto.Size = new Size(80, 80);
             panel_Produto.TabIndex = 5;

@@ -31,7 +31,7 @@ namespace MiniERP.EF.App.Views
         private void Btn_Fechar_Login_Click_1(object sender, EventArgs e)
         {
             Close();
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void ExecutarLogin()
@@ -49,11 +49,10 @@ namespace MiniERP.EF.App.Views
                 {
                     MessageBox.Show("Login bem-sucedido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Close();
-
                     Form_Menu formMenu = new Form_Menu(usuario.NomeUsuario);
                     formMenu.NomeUsuario = usuario.NomeUsuario;
-                    formMenu.Show();
+                    Hide();
+                    formMenu.ShowDialog();
                 }
                 else
                 {
@@ -79,6 +78,19 @@ namespace MiniERP.EF.App.Views
         {
             txb_Usuario_Login.Text = string.Empty;
             txb_Senha_login.Text = string.Empty;
+        }
+
+        private void Form_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente fechar o sistema?", "Atenção!",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
