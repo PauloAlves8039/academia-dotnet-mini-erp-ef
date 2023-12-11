@@ -35,7 +35,7 @@ GO
 
 CREATE TABLE [Usuarios] (
     [Id] int NOT NULL IDENTITY,
-    [NomeUsuario] nvarchar(64) NOT NULL,
+    [Nome] nvarchar(64) NOT NULL,
     [Senha] nvarchar(64) NOT NULL,
     CONSTRAINT [PK_Usuarios] PRIMARY KEY ([Id])
 );
@@ -75,11 +75,11 @@ CREATE TABLE [ItemNotaFiscal] (
 );
 GO
 
-IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'NomeUsuario', N'Senha') AND [object_id] = OBJECT_ID(N'[Usuarios]'))
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nome', N'Senha') AND [object_id] = OBJECT_ID(N'[Usuarios]'))
     SET IDENTITY_INSERT [Usuarios] ON;
-INSERT INTO [Usuarios] ([Id], [NomeUsuario], [Senha])
+INSERT INTO [Usuarios] ([Id], [Nome], [Senha])
 VALUES (1, N'Administrador', N'Abc@123456');
-IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'NomeUsuario', N'Senha') AND [object_id] = OBJECT_ID(N'[Usuarios]'))
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nome', N'Senha') AND [object_id] = OBJECT_ID(N'[Usuarios]'))
     SET IDENTITY_INSERT [Usuarios] OFF;
 GO
 
@@ -96,7 +96,7 @@ CREATE INDEX [IX_Produto_FornecedorId] ON [Produto] ([FornecedorId]);
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20231211020552_Initial', N'6.0.25');
+VALUES (N'20231211190519_Initial', N'6.0.25');
 GO
 
 COMMIT;

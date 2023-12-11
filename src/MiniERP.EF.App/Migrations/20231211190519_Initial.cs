@@ -49,7 +49,7 @@ namespace MiniERP.EF.App.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomeUsuario = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
+                    Nome = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false)
                 },
                 constraints: table =>
@@ -127,7 +127,7 @@ namespace MiniERP.EF.App.Migrations
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
-                columns: new[] { "Id", "NomeUsuario", "Senha" },
+                columns: new[] { "Id", "Nome", "Senha" },
                 values: new object[] { 1, "Administrador", "Abc@123456" });
 
             migrationBuilder.CreateIndex(

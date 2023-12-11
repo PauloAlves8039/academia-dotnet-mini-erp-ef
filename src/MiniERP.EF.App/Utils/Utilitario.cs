@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace MiniERP.EF.App.Utils
 {
@@ -35,7 +34,7 @@ namespace MiniERP.EF.App.Utils
 
         public static bool ValidarFormatoDoEmail(string emailInformado)
         {
-            string formatoDoEmail = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            var formatoDoEmail = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
 
             if (!Regex.IsMatch(emailInformado, formatoDoEmail))
             {
@@ -48,19 +47,19 @@ namespace MiniERP.EF.App.Utils
 
         public static bool ValidarQuantidadeCaracteresTelefone(string telefone)
         {
-            string numerosDoTelefone = new string(telefone.Where(char.IsDigit).ToArray());
+            var numerosDoTelefone = new string(telefone.Where(char.IsDigit).ToArray());
             return numerosDoTelefone.Length == 10 || numerosDoTelefone.Length == 11;
         }
 
         public static bool ValidarQuantidadeCaracteresCpf(string cpf)
         {
-            string numerosDoCpf = new string(cpf.Where(char.IsDigit).ToArray());
+            var numerosDoCpf = new string(cpf.Where(char.IsDigit).ToArray());
             return numerosDoCpf.Length >= 11;
         }
 
         public static bool ValidarQuantidadeCaracteresCnpj(string cnpj)
         {
-            string numerosDoCnpj = new string(cnpj.Where(char.IsDigit).ToArray());
+            var numerosDoCnpj = new string(cnpj.Where(char.IsDigit).ToArray());
             return numerosDoCnpj.Length >= 14;
         }
         public static bool ValidarOsCamposDoUsuario(string nome, string senha)

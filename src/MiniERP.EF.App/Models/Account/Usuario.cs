@@ -11,27 +11,27 @@ namespace MiniERP.EF.App.Models.Account
 
         [Required(ErrorMessage = "O campo Nome de Usuário é obrigatório.")]
         [MaxLength(64)]
-        public string NomeUsuario { get; set; }
+        public string Nome { get; set; }
 
         [Required(ErrorMessage = "O campo Senha é obrigatório.")]
         [MaxLength(64)]
         public string Senha { get; set; }
 
-        public void CriarSenhaCriptografada(string senha)
+        public void ConfigurarCriptografiaNaSenha(string senha)
         {
             using (var sha256 = SHA256.Create())
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(senha);
                 byte[] hashBytes = sha256.ComputeHash(bytes);
 
-                string hashString = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+                var hashGerado = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                if (hashString.Length > 64)
+                if (hashGerado.Length > 64)
                 {
-                    throw new InvalidOperationException($"O comprimento do hash gerado é {hashString.Length}, que excede o tamanho permitido.");
+                    throw new InvalidOperationException($"O comprimento do seu hash gerado é {hashGerado.Length}, excede o tamanho permitido.");
                 }
 
-                Senha = hashString;
+                Senha = hashGerado;
             }
         }
     }

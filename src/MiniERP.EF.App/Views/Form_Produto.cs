@@ -60,7 +60,7 @@ namespace MiniERP.EF.App.Views
 
         private async void Btn_Pesquisar_Produto_Click(object sender, EventArgs e)
         {
-            string pesquisa = txb_Pesquisar_Produto.Text.Trim();
+            var pesquisa = txb_Pesquisar_Produto.Text.Trim();
 
             if (!string.IsNullOrEmpty(pesquisa))
             {

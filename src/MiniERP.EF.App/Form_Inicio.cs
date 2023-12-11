@@ -18,7 +18,7 @@ namespace MiniERP.EF.App
             else
             {
                 Timer_Inicio.Enabled = false;
-                Form_Login formLogin = new Form_Login();
+                var formLogin = new Form_Login();
                 formLogin.Show();
                 Visible = false;
             }

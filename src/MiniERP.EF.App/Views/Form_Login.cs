@@ -24,7 +24,7 @@ namespace MiniERP.EF.App.Views
 
         private void Btn_Cadastrar_Usuario_Click(object sender, EventArgs e)
         {
-            Form_Usuario novoUsuario = new Form_Usuario();
+            var novoUsuario = new Form_Usuario();
             novoUsuario.Show();
         }
 
@@ -36,41 +36,41 @@ namespace MiniERP.EF.App.Views
 
         private void ExecutarLogin()
         {
-            var username = txb_Usuario_Login.Text;
-            var password = txb_Senha_login.Text;
+            var nome = txb_Usuario_Login.Text;
+            var senha = txb_Senha_login.Text;
 
-            Utilitario.ValidarOsCamposDoUsuario(username, password);
+            Utilitario.ValidarOsCamposDoUsuario(nome, senha);
 
             using (var context = new MiniERP_EFContext())
             {
-                var usuario = context.Usuarios.FirstOrDefault(u => u.NomeUsuario == username);
+                var usuario = context.Usuarios.FirstOrDefault(u => u.Nome == nome);
 
-                if (usuario != null && VerificarSenha(password, usuario.Senha))
+                if (usuario != null && AnalisarSenha(senha, usuario.Senha))
                 {
                     MessageBox.Show("Login bem-sucedido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Form_Menu formMenu = new Form_Menu(usuario.NomeUsuario);
-                    formMenu.NomeUsuario = usuario.NomeUsuario;
+                    var formMenu = new Form_Menu(usuario.Nome);
+                    formMenu.NomeUsuario = usuario.Nome;
                     Hide();
                     formMenu.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Falha no login. Verifique suas credenciais.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Falha no login, por favro verifique suas credenciais.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private bool VerificarSenha(string senha, string hashArmazenado)
+        private bool AnalisarSenha(string senha, string hashArmazenado)
         {
             using (var sha256 = SHA256.Create())
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(senha);
                 byte[] hashBytes = sha256.ComputeHash(bytes);
 
-                string hashSenhaDigitada = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+                string hashSenhaInformada = BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
 
-                return hashSenhaDigitada == hashArmazenado;
+                return hashSenhaInformada == hashArmazenado;
             }
         }
 
@@ -82,8 +82,7 @@ namespace MiniERP.EF.App.Views
 
         private void Form_Login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente fechar o sistema?", "Atenção!",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente fechar o sistema?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
             {
                 e.Cancel = true;
             }

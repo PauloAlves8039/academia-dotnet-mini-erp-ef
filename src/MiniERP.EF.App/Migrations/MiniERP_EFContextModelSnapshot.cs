@@ -30,7 +30,7 @@ namespace MiniERP.EF.App.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("NomeUsuario")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
@@ -48,7 +48,7 @@ namespace MiniERP.EF.App.Migrations
                         new
                         {
                             Id = 1,
-                            NomeUsuario = "Administrador",
+                            Nome = "Administrador",
                             Senha = "Abc@123456"
                         });
                 });

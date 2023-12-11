@@ -29,30 +29,30 @@ namespace MiniERP.EF.App.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            ConfigureUsuarios(modelBuilder);
-            ConfigureClientes(modelBuilder);
-            ConfigureFornecedores(modelBuilder);
-            ConfigureItemNotaFiscal(modelBuilder);
-            ConfigureNotaFiscal(modelBuilder);
-            ConfigureProdutos(modelBuilder);
+            ConfigurarPropriedadesDoUsuario(modelBuilder);
+            ConfigurarPropriedadesDoCliente(modelBuilder);
+            ConfigurarPropriedadesDoFornecedor(modelBuilder);
+            ConfigurarItensEPropriedadesDaNotaFiscal(modelBuilder);
+            ConfigurarPropriedadesDaNotaFiscal(modelBuilder);
+            ConfigurarPropriedadesDoProduto(modelBuilder);
 
             OnModelCreatingPartial(modelBuilder);
         }
 
-        private void ConfigureUsuarios(ModelBuilder modelBuilder)
+        private void ConfigurarPropriedadesDoUsuario(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
                     Id = 1,
-                    NomeUsuario = "Administrador",
+                    Nome = "Administrador",
                     Senha = "Abc@123456"
                 });
 
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.NomeUsuario)
+                entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(64);
                 entity.Property(e => e.Senha)
@@ -61,7 +61,7 @@ namespace MiniERP.EF.App.Data
             });
         }
 
-        private void ConfigureClientes(ModelBuilder modelBuilder)
+        private void ConfigurarPropriedadesDoCliente(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cliente>(entity =>
             {
@@ -98,7 +98,7 @@ namespace MiniERP.EF.App.Data
             });
         }
 
-        private void ConfigureFornecedores(ModelBuilder modelBuilder)
+        private void ConfigurarPropriedadesDoFornecedor(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Fornecedor>(entity =>
             {
@@ -136,7 +136,7 @@ namespace MiniERP.EF.App.Data
         }
 
 
-        private void ConfigureItemNotaFiscal(ModelBuilder modelBuilder)
+        private void ConfigurarItensEPropriedadesDaNotaFiscal(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ItemNotaFiscal>(entity =>
             {
@@ -160,7 +160,7 @@ namespace MiniERP.EF.App.Data
         }
 
 
-        private void ConfigureNotaFiscal(ModelBuilder modelBuilder)
+        private void ConfigurarPropriedadesDaNotaFiscal(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NotaFiscal>(entity =>
             {
@@ -180,7 +180,7 @@ namespace MiniERP.EF.App.Data
             });
         }
 
-        private void ConfigureProdutos(ModelBuilder modelBuilder)
+        private void ConfigurarPropriedadesDoProduto(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Produto>(entity =>
             {

@@ -34,10 +34,10 @@ namespace MiniERP.EF.App.Views
 
         private void ExecutarCadastro()
         {
-            var nomeUsuario = txb_Usuario_Adcionado.Text;
+            var nome = txb_Usuario_Adcionado.Text;
             var senha = txb_Senha_Adicionada.Text;
 
-            if (!Utilitario.ValidarOsCamposDoUsuario(nomeUsuario, senha))
+            if (!Utilitario.ValidarOsCamposDoUsuario(nome, senha))
             {
                 return;
             }
@@ -46,10 +46,10 @@ namespace MiniERP.EF.App.Views
             {
                 var novoUsuario = new Usuario
                 {
-                    NomeUsuario = nomeUsuario,
+                    Nome = nome,
                 };
 
-                novoUsuario.CriarSenhaCriptografada(senha);
+                novoUsuario.ConfigurarCriptografiaNaSenha(senha);
 
                 context.Usuarios.Add(novoUsuario);
                 context.SaveChanges();
