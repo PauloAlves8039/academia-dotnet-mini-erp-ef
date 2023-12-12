@@ -101,7 +101,7 @@ namespace MiniERP.EF.App.Views
         {
             try
             {
-                string caminhoDoPDF = @"C:\DetalhesNotaFiscal.pdf";
+                string caminhoDoPDF = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads", "DetalhesNotaFiscal.pdf");
 
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Arquivos PDF (*.pdf)|*.pdf";
@@ -185,9 +185,9 @@ namespace MiniERP.EF.App.Views
         {
             Table tabela = new Table(2);
 
-            tabela.AddCell(new Cell(1, 2).Add(new Paragraph("Valor Total")).SetBold().SetTextAlignment(TextAlignment.CENTER));
+            tabela.AddCell(new Cell(1, 2).Add(new Paragraph("Valor do Documento")).SetBold().SetTextAlignment(TextAlignment.CENTER));
 
-            AdicionarLinhaNaTabela(tabela, "Valor Total", lbl_ValorTotal_NotaFiscal.Text);
+            AdicionarLinhaNaTabela(tabela, "Total", lbl_ValorTotal_NotaFiscal.Text);
 
             return tabela;
         }

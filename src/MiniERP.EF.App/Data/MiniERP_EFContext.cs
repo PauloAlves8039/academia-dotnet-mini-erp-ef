@@ -23,7 +23,6 @@ namespace MiniERP.EF.App.Data
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=MiniERP_EF_WF;Persist Security Info=True;User ID=sa;Password=*********");
-                optionsBuilder.UseLazyLoadingProxies();
             }
         }
 

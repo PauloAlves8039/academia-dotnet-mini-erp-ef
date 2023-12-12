@@ -445,9 +445,9 @@
             label13.ForeColor = Color.DodgerBlue;
             label13.Location = new Point(17, 354);
             label13.Name = "label13";
-            label13.Size = new Size(687, 15);
+            label13.Size = new Size(716, 15);
             label13.TabIndex = 19;
-            label13.Text = "Um botão com o símbolo do PDF que ao ser pressionado salva os dados da nota e faz o download automático na unidade C:\\ ";
+            label13.Text = "Um botão com o símbolo do PDF que ao ser pressionado salva os dados da nota e baixa na pasta Downloads de forma automática.";
             // 
             // label12
             // 

@@ -138,7 +138,7 @@
             groupBox_ExibirDetalhes_Total.Size = new Size(300, 69);
             groupBox_ExibirDetalhes_Total.TabIndex = 19;
             groupBox_ExibirDetalhes_Total.TabStop = false;
-            groupBox_ExibirDetalhes_Total.Text = "Valor da Nota";
+            groupBox_ExibirDetalhes_Total.Text = "Valor do Documento";
             // 
             // lbl_ValorTotal_NotaFiscal
             // 
