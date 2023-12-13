@@ -10,6 +10,14 @@
 
 Repositório com aplicação desktop para simular um `Mini ERP` com objetivo realizar o lançamento de `Notas Fiscais` fictícias, o desafio foi proposto durante a Academia DotNet ministrada pela `Universidade Franciscana - UFN`.
 
+## :camera: Menu de Navegação
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/academia-dotnet-mini-erp-ef/blob/master/src/MiniERP.EF.App/Resources/images/screenshot2.PNG" /></p>
+
+## :movie_camera: Vídeo de Demonstração
+
+[Projeto Mini ERP - YouTube](https://www.youtube.com/watch?v=mnmmCrL1Ot0&t=55s)
+
 ## :page_facing_up: Desafio
 
 [Descrição do Desafio](https://github.com/ricardofrohlich/academia_DotNet_5/blob/main/03-exercicios-e-desafios/13_MiniERP%20com%20Entity.txt)
@@ -59,7 +67,10 @@ A aplicação implementa um sistema de gerenciamento que facilita a realização
 7. O utilização de um formulário de `Informações` a intenção é tentar proporcionar uma experiência mais agradável ao usuário, se por alguma eventualidade surgir dificuldades no uso da aplicação o usuário vai ter essa opção de ajuda para lhe auxiliar.
 8. A adição de `Print Screen` da nota: apliquei esse recurso extra para oferecer ao usuário mais uma opção se por acaso o mesmo precise exibir essas informações.
 9. Duplo click nas linhas dos `DataGrids`: habilitei esse recurso em todos os DataGrids para oferecer agilidade ao usuário na hora de atualizar, pesquisar e excluir registros para as models `Cliente`, `Fornecedor` e `Produto` em seus respectivos formulários. No caso da `NotaFiscal` essa função oferece uma melhor rapidez para tirar `Print Screen` e gerar `PDF` com a abertura de um formulário de visualização.
-10. Navegação entre os formulários: seguindo a mesma ideia para oferecer uma experiência agradável ao usuário adicionei um menu com uma barra de navegação entre os formulários, também adicionei `ícones clicaveis` no formulário de menu para oferecer agilidade de acesso aos módulos da aplicação. 
+10. Navegação entre os formulários: seguindo a mesma ideia para oferecer uma experiência agradável ao usuário adicionei um menu com uma barra de navegação entre os formulários, também adicionei `ícones clicaveis` no formulário de menu para oferecer agilidade de acesso aos módulos da aplicação.
+11. As propriedades `DataEmissao` e `ValorTotal` da classe `NotaFiscal` estão gerando seus valores de forma automatizada:
+- A `DataEmissao` vai pegar a data e hora do sistema operacional, essa implementação foi feita no método `CriarNovaNotaFiscal` da classe `Form_NotaFiscal`.
+- Já para o calculo do `ValorTotal` foi criado o método `CalcularValorTotal` na classe de serviço `NotaFiscalService`, a sua declaração foi feita no método `AdicionarItemNotaFiscal` também da classe `Form_NotaFiscal`.
 
 ## :eyes: Observação Sobre a Segurança Desse Projeto
 
@@ -75,7 +86,7 @@ A aplicação implementa um sistema de gerenciamento que facilita a realização
 Não é uma boa prática a criação desse tipo de usuário nesse cenário, é recomendada abordagens diferentes voltadas a uma segurança mas elaborada. A intenção é ter uma condição de acesso funcional para uso da aplicação.
 
 - com o projeto exeutado e o acesso configurado basta acessar o menu principal para navegar entre os formulários e ter acesso a seus recursos.
-- Na geração do `PDF` caso ocorra algum erro tente executar o `Visual Studio` como `Administrador` e a funcionalidade de geração e download desse arquivo com o nome `DetalhesNotaFiscal` ocorrerá com sucesso na unidade `C:` do sistema operacional. 
+- Na geração do `PDF` o arquivo é baixado na pasta `Downloads` do sistema operacional com o nome `DetalhesNotaFiscal`.
  
 ## :floppy_disk: Clonar Repositório
 
@@ -86,10 +97,6 @@ git clone https://github.com/PauloAlves8039/academia-dotnet-mini-erp-ef.git
 ## :camera: Formulário de Login
 
 <p align="center"> <img src="https://github.com/PauloAlves8039/academia-dotnet-mini-erp-ef/blob/master/src/MiniERP.EF.App/Resources/images/screenshot1.PNG" /></p>
-
-## :camera: Menu de Navegação
-
-<p align="center"> <img src="https://github.com/PauloAlves8039/academia-dotnet-mini-erp-ef/blob/master/src/MiniERP.EF.App/Resources/images/screenshot2.PNG" /></p>
 
 ## :camera: Formulário de Clientes
 
