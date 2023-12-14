@@ -62,26 +62,25 @@ A aplicação implementa um sistema de gerenciamento que facilita a realização
 4. O uso dos padrões `Service` e `Repository` além da organização na estrutura do projeto  os objetivos são:
 - Aplicar uma comunicação com o banco de dados usando o `Repository Pattern`.
 - Definir a separação da regra de negócio das demais partes da aplicação com o `Service Pattern`.
-5. A utilização de algumas `ViewModels`: usei essa abordagem para as classes `Produto`, `NotaFiscal` e `ItemNotaFiscal` para obter uma melhor flexibilidade para a montagem dos `DataGrids` dessas entidades e na montagem do `PDF` da nota.
+5. A utilização de algumas `ViewModels`: usei essa abordagem para as classes `Produto`, `NotaFiscal` e `ItemNotaFiscal` para obter uma melhor flexibilidade para a montagem das `DataGrids` dessas entidades e na montagem do `PDF` da nota.
 6. A não `Atualização` ou `Exclusão` das notas: decidi não aplicar essas funções com base em boas práticas que envolvem os lançamentos e usos dessas notas.
 7. O utilização de um formulário de `Informações` a intenção é tentar proporcionar uma experiência mais agradável ao usuário, se por alguma eventualidade surgir dificuldades no uso da aplicação o usuário vai ter essa opção de ajuda para lhe auxiliar.
 8. A adição de `Print Screen` da nota: apliquei esse recurso extra para oferecer ao usuário mais uma opção se por acaso o mesmo precise exibir essas informações.
-9. Duplo click nas linhas dos `DataGrids`: habilitei esse recurso em todos os DataGrids para oferecer agilidade ao usuário na hora de atualizar, pesquisar e excluir registros para as models `Cliente`, `Fornecedor` e `Produto` em seus respectivos formulários. No caso da `NotaFiscal` essa função oferece uma melhor rapidez para tirar `Print Screen` e gerar `PDF` com a abertura de um formulário de visualização.
+9. Duplo click nas linhas dos `DataGrids`: habilitei esse recurso para oferecer agilidade ao usuário na hora de atualizar, pesquisar e excluir registros para as models `Cliente`, `Fornecedor` e `Produto` em seus respectivos formulários. No caso da `NotaFiscal` essa função oferece uma melhor rapidez para tirar `Print Screen` e gerar `PDF` com a abertura de um formulário de visualização.
 10. Navegação entre os formulários: seguindo a mesma ideia para oferecer uma experiência agradável ao usuário adicionei um menu com uma barra de navegação entre os formulários, também adicionei `ícones clicaveis` no formulário de menu para oferecer agilidade de acesso aos módulos da aplicação.
 11. As propriedades `DataEmissao` e `ValorTotal` da classe `NotaFiscal` estão gerando seus valores de forma automatizada:
 - A `DataEmissao` vai pegar a data e hora do sistema operacional, essa implementação foi feita no método `CriarNovaNotaFiscal` da classe `Form_NotaFiscal`.
 - Já para o calculo do `ValorTotal` foi criado o método `CalcularValorTotal` na classe de serviço `NotaFiscalService`, a sua declaração foi feita no método `AdicionarItemNotaFiscal` também da classe `Form_NotaFiscal`.
-
-## :eyes: Observação Sobre a Segurança Desse Projeto
-
-- O `Identity Client` foi implementado de forma simples apenas como exemplo ilustrativo oferecendo duas opções, uma para a realização do `login` e a outra para `cadastrar usuários`, essas abordagens do uso do `Identity Client` nesse projeto `não são recomendadas para ambientes de produção`.
 
 ## :wrench: Utilização do Projeto
 
 - Após baixar ou clonar o projeto navegue até a classe [MiniERP_EFContext](https://github.com/PauloAlves8039/academia-dotnet-mini-erp-ef/blob/master/src/MiniERP.EF.App/Data/MiniERP_EFContext.cs) e atualize a sua `string de conexão` de acordo com as suas credenciais do `SQL Server`.
 - Em seguida execute o comando `Update-Database` para a geração da base de dados, se por um acaso enontrar dificuldades nesse ponto pode ser feita a criação do banco de dados diretamente no `SQL Server` executando o script [MiniERP.sql](https://github.com/PauloAlves8039/academia-dotnet-mini-erp-ef/blob/master/src/MiniERP.EF.App/Data/MiniERP.sql) que foi gerado durante o desenvolvimento.
 - Com o projeto configurado ao ser executado vai ser solicitada as credencias do usuário, existem duas opção, pode ser cadastrado um `novo usuário` ou pode ser usado um `usuário padrão` que foi criado na geração do banco de dados com as seguintes informações: nome `Administrador` senha `Abc@123456`.
-## :eyes: Observação 
+- 
+## :eyes: Observações
+
+- O `Identity Client` foi implementado de forma simples apenas como exemplo ilustrativo oferecendo duas opções, uma para a realização do `login` e a outra para `cadastrar usuários`, essas abordagens do uso do `Identity Client` nesse projeto `não são recomendadas para ambientes de produção`.
 
 Não é uma boa prática a criação desse tipo de usuário nesse cenário, é recomendada abordagens diferentes voltadas a uma segurança mas elaborada. A intenção é ter uma condição de acesso funcional para uso da aplicação.
 
